@@ -8,6 +8,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
+                                <span class="seccion-etiqueta">Semantica Digital</span>
                                 <h1>Administre su empresa con nuestras <span
                                             class="color-text">Soluciones nube</span>
                                 </h1>
@@ -17,11 +18,11 @@
                                 </p>
                                 <div class="banner-btn">
                                     <a href="{{ path('nosotros') }}" class="default-btn-one">
-                                        Leer mas
+                                        Conózcanos
                                         <span></span>
                                     </a>
                                     <a class="default-btn" href="{{ path('contacto') }}">
-                                        Contactenos
+                                        Contáctenos
                                         <span></span>
                                     </a>
                                 </div>
@@ -41,42 +42,46 @@
     <!-- End Home Area -->
 
     <!-- Start Services Section -->
-    <section class="services-section pt-70 pb-100">
+    <section id="servicios" class="services-section pt-70 pb-100">
         <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Servicios</span>
+                <h2>Acompañamos cada etapa de su operación</h2>
+            </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-tools"></i>
+                            <i class="fas fa-cloud"></i>
                         </div>
                         <h3>Servicios nube</h3>
                         <p>Garantice el éxito y optimo funcionamiento de sus aplicaciones con nuestras soluciones de infraestructura.</p>
                         <div class="services-btn-link">
-                            <a href="{{ path('servicio', {'servicio': 'nube'}) }}" class="services-link">Leer mas</a>
+                            <a href="{{ path('servicio', {'servicio': 'nube'}) }}" class="services-link">Leer más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-display1"></i>
+                            <i class="fas fa-headset"></i>
                         </div>
-                        <h3>Soporte tecnico</h3>
+                        <h3>Soporte técnico</h3>
                         <p>Un equipo de profesionales preparados para guiarlo en el uso de nuestros productos y servicios</p>
                         <div class="services-btn-link">
-                            <a href="{{ path('servicio', {'servicio': 'soporte'}) }}" class="services-link">Leer mas</a>
+                            <a href="{{ path('servicio', {'servicio': 'soporte'}) }}" class="services-link">Leer más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-share"></i>
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>Consultoria</h3>
+                        <h3>Consultoría</h3>
                         <p>Encuentre las fortalezas de su compañía y conviértalas en ventajas competitivas alineadas a su sector</p>
                         <div class="services-btn-link">
-                            <a href="{{ path('servicio', {'servicio': 'consultoria'}) }}" class="services-link">Leer mas</a>
+                            <a href="{{ path('servicio', {'servicio': 'consultoria'}) }}" class="services-link">Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -91,6 +96,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="overview-content">
+                        <span class="seccion-etiqueta">Producto</span>
                         <h2>Semantica ERP</h2>
                         <p>Con el software Semantica ERP, centralice todas las áreas y
                             procesos de su compañía, generando información sólida que le permita
@@ -105,11 +111,14 @@
                             <li><span>Programacion turnos</span></li>
                             <li><span>Logistica & Transporte</span></li>
                         </ul>
+                        <div class="overview-btn">
+                            <a href="{{ path('producto_erp') }}" class="default-btn-one">Conocer Semantica ERP <span></span></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="overview-image-2">
-                        <img src="{{ asset('landingPage/img/choose-1.png') }}" alt="logo">
+                    <div class="inicio-ilustracion">
+                        {% include 'producto/_flujo.svg.twig' %}
                     </div>
                 </div>
             </div>
@@ -128,6 +137,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="overview-content">
+                        <span class="seccion-etiqueta">Aliados</span>
                         <h2>Nuestros aliados Semántica</h2>
                         <p>En Semantica contamos con colaboradores de primer nivel,
                             compañías expertas en sectores específicos que enriquecen nuestras soluciones y la calidad de nuestros
@@ -155,8 +165,7 @@
                     <div class="single-counter">
                         <div class="counter-contents">
                             <h2>
-                                <span class="counter-number">5</span>
-                                <span>+</span>
+                                <span class="counter-number">10</span><span>+</span>
                             </h2>
                             <h3 class="counter-heading">Años de experiencia</h3>
                         </div>
@@ -166,7 +175,7 @@
                     <div class="single-counter">
                         <div class="counter-contents">
                             <h2>
-                                <span class="counter-number">45</span>
+                                <span class="counter-number">80</span>
                             </h2>
                             <h3 class="counter-heading">Implementaciones exitosas</h3>
                         </div>
@@ -176,8 +185,7 @@
                     <div class="single-counter">
                         <div class="counter-contents">
                             <h2>
-                                <span class="counter-number">3500</span>
-                                <span>+</span>
+                                <span>+</span><span class="counter-number">10</span> <span>mil</span>
                             </h2>
                             <h3 class="counter-heading">Soportes</h3>
                         </div>
@@ -187,10 +195,9 @@
                     <div class="single-counter">
                         <div class="counter-contents">
                             <h2>
-                                <span class="counter-number">1300</span>
-                                <span>+</span>
+                                <span>+</span><span class="counter-number">500</span> <span>mil</span>
                             </h2>
-                            <h3 class="counter-heading">Casos desarrollo</h3>
+                            <h3 class="counter-heading">Desarrollos</h3>
                         </div>
                     </div>
                 </div>
@@ -200,205 +207,87 @@
     <!-- End Counter Section -->
 
     <!-- Start Team Section -->
+    {% set equipo = [
+        {'nombre': 'Mario Estrada', 'cargo': 'CEO e investigador'},
+        {'nombre': 'Sebastián Orozco', 'cargo': 'Líder facilitador'},
+        {'nombre': 'Carolina Sánchez', 'cargo': 'Gestión administrativa'},
+        {'nombre': 'Angie Carolina', 'cargo': 'Líder de implementación'},
+        {'nombre': 'Sebastián Hoyos', 'cargo': 'Líder frontend'},
+        {'nombre': 'Karina Vásquez', 'cargo': 'Soporte técnico y consultoría'},
+        {'nombre': 'Julio Montoya', 'cargo': 'Soporte técnico y consultoría'},
+    ] %}
     <section class="team-area section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h2>Miembros del equipo</h2>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-team-box">
-                        <div class="team-image">
-                            <img src="{{ asset('landingPage/img/team/team-1.jpg') }}" alt="logo">
-                            <div class="team-social-icon">
-                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+            <div class="section-title">
+                <span class="seccion-etiqueta">Equipo</span>
+                <h2>Miembros del equipo</h2>
+                <p>Las personas que acompañan la implementación, el soporte y la evolución de sus soluciones.</p>
+            </div>
+            <div class="row justify-content-center">
+                {% for miembro in equipo %}
+                    {% set partes = miembro.nombre|split(' ') %}
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="equipo-tarjeta">
+                            <div class="equipo-iniciales" aria-hidden="true">
+                                {{- partes|first|first ~ partes|last|first -}}
                             </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Mario Estrada</h3>
-                            <span>CEO Investigador</span>
+                            <h3>{{ miembro.nombre }}</h3>
+                            <span>{{ miembro.cargo }}</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-team-box">
-                        <div class="team-image">
-                            <img src="{{ asset('landingPage/img/team/team-2.jpg') }}" alt="logo">
-                            <div class="team-social-icon">
-                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Sebastian Orozco</h3>
-                            <span>Lider Facilitador</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-team-box">
-                        <div class="team-image">
-                            <img src="{{ asset('landingPage/img/team/team-3.jpg') }}" alt="logo">
-                            <div class="team-social-icon">
-                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Johana Castaño</h3>
-                            <span>Gestion Administrativa</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-team-box">
-                        <div class="team-image">
-                            <img src="{{ asset('landingPage/img/team/team-4.jpg') }}" alt="logo">
-                            <div class="team-social-icon">
-                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Andres Cano</h3>
-                            <span>Desarrollador Apps - Front</span>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
     <!-- End Team Section -->
 
     <!-- Start Testimonial Section -->
+    {% set testimonios = [
+        {
+            'texto': 'En Semántica hemos encontrado un aliado estratégico ajustado a nuestras necesidades: atiende las solicitudes y brinda soluciones oportunamente. En Coordinar Seguridad nos sentimos respaldados para dar tranquilidad a nuestros clientes y continuar avanzando en la transformación digital.',
+            'nombre': 'Jhon F. Castaño', 'cargo': 'Gerente', 'empresa': 'Coordinar Seguridad',
+            'foto': 'JhonFCastano.jpg'
+        },
+        {
+            'texto': 'Con la implementación de Semántica hemos incrementado el control de nuestros procesos y logrado el cálculo de los costos ocultos. Hoy podemos ofrecer trazabilidad de la información en el tiempo y garantía de los datos en un proceso de mejora continua.',
+            'nombre': 'Javier H. Berrío de Pombo', 'cargo': 'Gerente General', 'empresa': 'Grupo Vimarco',
+            'foto': 'JavierBerrio.jpg'
+        },
+        {
+            'texto': 'Semántica Digital es garantía de tranquilidad y respaldo en todos nuestros procesos corporativos. Nos han acompañado como aliados casi desde el nacimiento de la empresa y han superado nuestras expectativas en cada una de nuestras necesidades.',
+            'nombre': 'Andrés Montoya', 'cargo': 'Gerente General', 'empresa': 'Energy Logística',
+            'foto': 'AndresMontoya.jpg'
+        },
+        {
+            'texto': 'Encontrar un respaldo tecnológico que apoye los procesos de ejecución y control es de vital importancia. Con Semántica tenemos la garantía de una mejora continua, aplicativos de fácil manejo, seguridad en la información y herramientas actualizadas.',
+            'nombre': 'Diana Zapata', 'cargo': 'Gerente Administrativa', 'empresa': 'Invivo',
+            'foto': 'DianaZapata.jpg'
+        },
+    ] %}
     <section class="testimonial-section bg-grey section-padding">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestros clientes dicen</h2>
+                <span class="seccion-etiqueta">Testimonios</span>
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>Empresas de distintos sectores que confían en Semantica para operar y crecer.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="testimonial-slider owl-carousel owl-theme">
-                        <!-- testimonials item -->
-                        <div class="single-testimonial">
-                            <div class="rating-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="testimonial-content">
-                                <p>En Semántica hemos encontrado un aliado estratégico ajustado a nuestras necesidades,
-                                    atiende las solicitudes y brinda soluciones oportunamente.
-                                    En Coordinar Seguridad nos sentimos respaldados para dar tranquilidad a
-                                    nuestros clientes y continuar avanzando en la transformación digital.</p>
-                            </div>
-                            <div class="avatar">
-                                <img src="{{ asset('landingPage/img/client/JhonFCastano.png') }}"
-                                     alt="testimonial images">
-                            </div>
-                            <div class="testimonial-bio">
-                                <div class="bio-info">
-                                    <h3>Jhon F. Castaño</h3>
-                                    <span>Gerente, Coordinar Seguridad</span>
-                                </div>
-                            </div>
+            <div class="testimonial-slider owl-carousel owl-theme">
+                {% for t in testimonios %}
+                    <figure class="testimonio">
+                        <span class="testimonio-empresa">{{ t.empresa }}</span>
+                        <div class="testimonio-texto">
+                            <p>{{ t.texto }}</p>
                         </div>
-                        <!-- testimonials item -->
-                        <div class="single-testimonial">
-                            <div class="rating-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
+                        <figcaption class="testimonio-autor">
+                            <img src="{{ asset('landingPage/img/client/' ~ t.foto) }}" alt="{{ t.nombre }}"
+                                 width="52" height="52" loading="lazy">
+                            <div>
+                                <h3>{{ t.nombre }}</h3>
+                                <span>{{ t.cargo }}</span>
                             </div>
-                            <div class="testimonial-content">
-                                <p>Con la implentacion de Semántica hemos incrementado el control de nuestros procesos
-                                    y logrado el control y cálculo de los costos ocultos. Hoy podemos ofrecer trazabilidad
-                                    de la informacion en el tiempo y garantia de los datos en un proceso de mejora continua.</p>
-                            </div>
-                            <div class="avatar">
-                                <img src="{{ asset('landingPage/img/client/JavierBerrio.jpg') }}"
-                                     alt="testimonial images">
-                            </div>
-                            <div class="testimonial-bio">
-                                <div class="bio-info">
-                                    <h3>Javier H. Berrio de Pombo</h3>
-                                    <span>Gerente General, Grupo Vimarco</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- testimonials item -->
-                        <div class="single-testimonial">
-                            <div class="rating-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="testimonial-content">
-                                <p>Semántica Digital es garantía de tranquilidad y respaldo en todos nuestros procesos corporativos,
-                                    nos han acompañado como aliados desde casi el nacimiento de la empresa, superaron nuestras expectativas
-                                    en cada una de nuestras necesidades y requerimientos.</p>
-                            </div>
-                            <div class="avatar">
-                                <img src="{{ asset('landingPage/img/client/AndresMontoya.jpeg') }}"
-                                     alt="testimonial images">
-                            </div>
-                            <div class="testimonial-bio">
-                                <div class="bio-info">
-                                    <h3>Andrés Montoya</h3>
-                                    <span>Gerente General, Energy Logistica</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- testimonials item -->
-                        <div class="single-testimonial">
-                            <div class="rating-box">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="testimonial-content">
-                                <p>Encontrar un respaldo tecnológico que apoye los procesos de
-                                    ejecución y control es de vital importancia. Con Semántica,
-                                    tenemos la garantía de una mejora y eficiencia continua en nuestros procesos,
-                                    aplicativos de fácil manejo, seguridad en la información y herramientas
-                                    actualizadas.</p>
-                            </div>
-                            <div class="avatar">
-                                <img src="{{ asset('landingPage/img/client/DianaZapata.png') }}"
-                                     alt="testimonial images">
-                            </div>
-                            <div class="testimonial-bio">
-                                <div class="bio-info">
-                                    <h3>Diana Zapata</h3>
-                                    <span>Gerente Administrativa, Invivo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        </figcaption>
+                    </figure>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -410,11 +299,11 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-12">
                     <div class="hire-content">
-                        <h2>Que proyecto tienes en mente hoy?</h2>
-                        <p>Desde nuestra fabrica de soluciones, atendemos de forma integral todos sus proyectos de tecnologia:
-                            nube, infraestructura, desarrollo a la medida, app moviles, bases de datos</p>
+                        <h2>¿Qué proyecto tiene en mente hoy?</h2>
+                        <p>Desde nuestra fábrica de soluciones atendemos de forma integral sus proyectos de tecnología:
+                            nube, infraestructura, desarrollo a la medida, apps móviles y bases de datos.</p>
                         <div class="hire-btn">
-                            <a class="default-btn-one" href="{{ path('contacto') }}">Contactenos <span></span></a>
+                            <a class="default-btn-one" href="{{ path('contacto') }}">Contáctenos <span></span></a>
                         </div>
                     </div>
                 </div>

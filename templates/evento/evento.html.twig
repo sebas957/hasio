@@ -1,150 +1,106 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        .contact-form-3 {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .contact-form-3 .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form-3 .form-control {
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 12px 15px;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form-3 .form-control:focus {
-            border-color: #667eea;
-            box-shadow: none;
-        }
-
-        .contact-information-box-3 {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-        }
-
-        .single-contact-info-box {
-            margin-bottom: 20px;
-        }
-
-        .single-contact-info-box:last-child {
-            margin-bottom: 0;
-        }
-    </style>
-{% endblock %}
-
 {% block content %}
-    <!-- Start Page Title Area -->
-    <div class="page-title-area item-bg2">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h2>Registro al Evento</h2>
-                        <ul>
-                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
-                            <li>{{ evento.nombre|default('Nueva versión Semántica - RedDoc') }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
+    {% set nombreEvento = evento.nombre|default('Nueva versión Semántica - RedDoc') %}
+    {% set meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] %}
+
+    {{ include('_cabecera.html.twig', {'titulo': 'Registro al evento', 'descripcion': nombreEvento, 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Eventos'}]}) }}
 
     <!-- Start Evento Section -->
-    <div class="contact-section section-padding">
+    <section class="contacto-area section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <!-- Información de Contacto -->
-                    <div class="contact-information-box-3">
-                        <div class="single-contact-info-box">
-                            <div class="contact-info">
-                                <h6>Dirección:</h6>
-                                <p>Cll 34 Nro 66 A 33 Ofc 201, Conquistadores</p>
-                                <p>Medellín, Antioquia - Colombia</p>
-                            </div>
-                            <div class="contact-info-bg-icon">
-                                <i class="pe-7s-map-marker"></i>
-                            </div>
-                        </div>
-                        <div class="single-contact-info-box">
-                            <div class="contact-info">
-                                <h6>Teléfono</h6>
-                                <p>+57 312 5829803</p>
-                            </div>
-                            <div class="contact-info-bg-icon">
-                                <i class="pe-7s-call"></i>
-                            </div>
-                        </div>
-                        <div class="single-contact-info-box">
-                            <div class="contact-info">
-                                <h6>Correo:</h6>
-                                <p>administracion@semantica.com.co</p>
-                                <p>investigacion@semantica.com.co</p>
-                            </div>
-                            <div class="contact-info-bg-icon">
-                                <i class="pe-7s-mail"></i>
-                            </div>
-                        </div>
+                <div class="col-lg-4">
+                    <div class="evento-tarjeta">
+                        <span class="seccion-etiqueta">Evento</span>
+                        <h2>{{ nombreEvento }}</h2>
+                        {% if evento.fecha ?? null %}
+                            {% set fecha = evento.fecha|date('U') %}
+                            <ul class="evento-datos">
+                                <li>
+                                    <i class="far fa-calendar-alt"></i>
+                                    {{ fecha|date('j') }} de {{ meses[fecha|date('n') - 1] }} de {{ fecha|date('Y') }}
+                                </li>
+                                {% if fecha|date('H:i') != '00:00' %}
+                                    <li>
+                                        <i class="far fa-clock"></i>
+                                        {{ fecha|date('g:i') }} {{ fecha|date('A') == 'AM' ? 'a. m.' : 'p. m.' }}
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                        <p>Complete el formulario para reservar su cupo.</p>
                     </div>
+
+                    <h3 class="evento-dudas">¿Tiene preguntas?</h3>
+                    <ul class="contacto-datos">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p><a href="tel:+573125829803">+57 312 5829803</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Correo</h3>
+                                <p><a href="mailto:administracion@semantica.com.co">administracion@semantica.com.co</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Dirección</h3>
+                                <p>Calle 34 # 66 A 33, oficina 201, Conquistadores<br>Medellín, Antioquia, Colombia</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-lg-8 col-md-12">
-                    <div class="contact-form contact-form-3">
-                        <h3>Formulario de Registro</h3>
-                        <p class="text-muted">Complete sus datos para registrarse al evento</p>
-
-                        <p class="form-message"></p>
+                <div class="col-lg-8">
+                    <div class="contacto-formulario">
+                        <h3 class="evento-formulario-titulo">Formulario de inscripción</h3>
+                        <p class="evento-formulario-texto">Todos los campos son obligatorios.</p>
                         {{ include('_avisos.html.twig') }}
-                        {{ form_start(form, { 'attr': {'class': 'form', 'id': "form_evento"} }) }}
-                        {{ form_errors(form) }}
-
+                        {{ form_start(form, { 'attr': {'id': 'form_evento'} }) }}
+                        {% if form.vars.errors|length %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for error in form.vars.errors %}{{ error.message }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+                            </div>
+                        {% endif %}
                         <div class="row">
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Nombre completo *</label>
-                                    {{ form_widget(form.nombre, { 'attr': {'class': 'form-control', 'placeholder': 'Ingrese su nombre completo'} }) }}
-                                    {{ form_errors(form.nombre) }}
+                                    {{ form_label(form.nombre, 'Nombre completo') }}
+                                    {{ form_widget(form.nombre, { 'attr': {'placeholder': 'Ej. Ana Gómez', 'autocomplete': 'name', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Correo electrónico *</label>
-                                    {{ form_widget(form.correo, { 'attr': {'class': 'form-control', 'placeholder': 'correo@ejemplo.com'} }) }}
-                                    {{ form_errors(form.correo) }}
+                                    {{ form_label(form.empresa, 'Empresa') }}
+                                    {{ form_widget(form.empresa, { 'attr': {'placeholder': 'Nombre de su empresa', 'autocomplete': 'organization', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Teléfono *</label>
-                                    {{ form_widget(form.telefono, { 'attr': {'class': 'form-control', 'placeholder': 'Ingrese su número de teléfono'} }) }}
-                                    {{ form_errors(form.telefono) }}
+                                    {{ form_label(form.correo, 'Correo electrónico') }}
+                                    {{ form_widget(form.correo, { 'attr': {'placeholder': 'nombre@empresa.com', 'autocomplete': 'email', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Empresa *</label>
-                                    {{ form_widget(form.empresa, { 'attr': {'class': 'form-control', 'placeholder': 'Nombre de su empresa'} }) }}
-                                    {{ form_errors(form.empresa) }}
+                                    {{ form_label(form.telefono, 'Teléfono') }}
+                                    {{ form_widget(form.telefono, { 'attr': {'placeholder': '+57 300 000 0000', 'autocomplete': 'tel', 'inputmode': 'tel', 'maxlength': 100} }) }}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="text-right mt-4">
-                            {{ form_widget(form.guardar, { 'attr': {'class': 'btnCustom'} }) }}
+                        <div class="contacto-enviar">
+                            <p class="contacto-privacidad">
+                                Al inscribirse acepta nuestra
+                                <a href="{{ path('soporte_politicas_privacidad') }}">política de privacidad</a>.
+                            </p>
+                            {{ form_widget(form.guardar, { 'label': 'Inscribirme', 'attr': {'class': 'default-btn'} }) }}
                         </div>
                         <input type="hidden" name="recaptcha_token">
                         {{ form_end(form) }}
@@ -152,8 +108,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- End Evento Section -->
 {% endblock %}
 {% block javascriptsPersonales %}
     {{ include('_recaptcha.html.twig', {'formulario': 'form_evento', 'accion': 'evento'}) }}
+    <script>
+        // Evita dobles envios mientras se obtiene el token y se procesa la inscripcion
+        document.getElementById('form_evento').addEventListener('submit', function (evento) {
+            var boton = evento.submitter;
+            if (boton) {
+                boton.classList.add('enviando');
+                boton.textContent = 'Enviando…';
+            }
+        });
+    </script>
 {% endblock %}

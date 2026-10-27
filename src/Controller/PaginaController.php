@@ -30,12 +30,6 @@ class PaginaController extends AbstractController
         return $this->render('producto/erp.html.twig');
     }
 
-    #[Route('/sector/{sector}', name: 'sector', requirements: ['sector' => 'transporte|vigilancia|comercializacion'])]
-    public function sector(string $sector): Response
-    {
-        return $this->render("sector/{$sector}.html.twig");
-    }
-
     #[Route('/servicio/{servicio}', name: 'servicio', requirements: ['servicio' => 'soporte|consultoria|capacitacion|nube|implementacion|medida'])]
     public function servicio(string $servicio): Response
     {

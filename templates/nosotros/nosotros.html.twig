@@ -1,65 +1,105 @@
 {% extends 'base.html.twig' %}
 {% block content %}
 
-    <!-- Start Page Title Area -->
-    <div class="page-title-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h2>Acerca de nosotros</h2>
-                        <ul>
-                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
-                            <li>Informacion general</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
+    {{ include('_cabecera.html.twig', {'titulo': 'Acerca de nosotros', 'descripcion': 'Software empresarial y servicios de tecnología hechos en Medellín para empresas de toda Colombia.', 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Nosotros'}]}) }}
 
     <!-- Start About Section -->
     <section class="about-area section-padding">
         <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-7 col-md-12 col-sm-12">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
                     <div class="about-content">
-                        <div class="about-content-text">
-                            <h2><span class="color-text">Semantica Digital</span> fabrica de soluciones y servicios.</h2>
-                            <p>Somos una empresa de software y componenetes de tecnologia hechos con herramientas modernas y colaboradores altamente calificados.
-                                Nuestro modelo de negocio está basado en la calidad de nuestros productos, altos estándares de servicio y flexibilidad hacia los requerimientos de los clientes, además ofrecemos al mercado la mejor relación costo beneficio</p>
-                            <div class="skills">
-                                <div class="skill-item">
-                                    <h6>Semantica ERP <em>80%</em></h6>
-                                    <div class="skill-progress">
-                                        <div class="progres" data-value="90%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <h6>Implementacion & Capacitacion<em>75%</em></h6>
-                                    <div class="skill-progress">
-                                        <div class="progres" data-value="75%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <h6>Consultoria <em>70%</em></h6>
-                                    <div class="skill-progress">
-                                        <div class="progres" data-value="80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <span class="seccion-etiqueta">Quiénes somos</span>
+                        <h2><span class="color-text">Semantica Digital</span>, fábrica de soluciones y servicios</h2>
+                        <p>Somos una empresa de software y componentes de tecnología construidos con herramientas
+                            modernas y colaboradores altamente calificados.</p>
+                        <p>Nuestro modelo de negocio se basa en la calidad de nuestros productos, altos estándares de
+                            servicio y flexibilidad frente a los requerimientos de cada cliente, con la mejor relación
+                            costo-beneficio del mercado.</p>
+                        <ul class="lista-check">
+                            <li><i class="fas fa-check"></i> Software ERP propio, modular y en la nube</li>
+                            <li><i class="fas fa-check"></i> Implementación, capacitación y soporte con equipo local</li>
+                            <li><i class="fas fa-check"></i> Desarrollo a la medida para sectores específicos</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12">
-                    <div class="about-image">
-                        <img src="{{ asset('landingPage/img/about.jpg') }}" alt="About image">
+                <div class="col-lg-6 col-md-12">
+                    <div class="nosotros-ilustracion">
+                        {{ include('nosotros/_ecosistema.svg.twig') }}
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End About Section -->
+
+    <!-- Start Cifras -->
+    <section class="nosotros-cifras">
+        <div class="container">
+            <div class="row">
+                {% for cifra in [
+                    {'valor': '10+', 'texto': 'Años de experiencia'},
+                    {'valor': '80', 'texto': 'Implementaciones exitosas'},
+                    {'valor': '+10 mil', 'texto': 'Soportes'},
+                    {'valor': '+500 mil', 'texto': 'Desarrollos'},
+                ] %}
+                    <div class="col-lg-3 col-6">
+                        <div class="nosotros-cifra">
+                            <strong>{{ cifra.valor }}</strong>
+                            <span>{{ cifra.texto }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Cifras -->
+
+    <!-- Start Pilares -->
+    <section class="services-section nosotros-pilares section-padding bg-grey">
+        <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Lo que nos define</span>
+                <h2>Cómo trabajamos con nuestros clientes</h2>
+            </div>
+            <div class="row">
+                {% for pilar in [
+                    {'icono': 'fa-award', 'titulo': 'Calidad', 'texto': 'Productos construidos con herramientas modernas, probados y en mejora continua.'},
+                    {'icono': 'fa-headset', 'titulo': 'Servicio', 'texto': 'Altos estándares de atención: un equipo que conoce su operación y responde a tiempo.'},
+                    {'icono': 'fa-puzzle-piece', 'titulo': 'Flexibilidad', 'texto': 'Nos adaptamos a los requerimientos de cada cliente y a las particularidades de su sector.'},
+                    {'icono': 'fa-hand-holding-usd', 'titulo': 'Costo-beneficio', 'texto': 'Herramientas de nivel empresarial a costos asequibles para su compañía.'},
+                ] %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services-item">
+                            <div class="services-icon">
+                                <i class="fas {{ pilar.icono }}"></i>
+                            </div>
+                            <h3>{{ pilar.titulo }}</h3>
+                            <p>{{ pilar.texto }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Pilares -->
+
+    <!-- Start Hire Section -->
+    <section class="hire-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12">
+                    <div class="hire-content">
+                        <h2>¿Hablamos de su proyecto?</h2>
+                        <p>Cuéntenos qué necesita su empresa y le proponemos la solución adecuada.</p>
+                        <div class="hire-btn">
+                            <a class="default-btn-one" href="{{ path('contacto') }}">Contáctenos <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hire Section -->
 
 {% endblock %}

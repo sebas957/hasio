@@ -1,118 +1,48 @@
-{% extends 'base.html.twig' %}
-{% block content %}
+{% extends 'servicio/_servicio.html.twig' %}
 
-    <!-- Start Page Title Area -->
-    <div class="page-title-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h2>Desarrollo a la medida</h2>
-                        <ul>
-                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
-                            <li>Desarrollo a la medida</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
+{% block servicio_clave %}medida{% endblock %}
 
-    <!-- Start Project Details Area -->
-    <section class="project-details-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="image-sliders owl-carousel owl-theme">
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-1.jpg') }}" alt="image">
-                        </div>
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-2.jpg') }}" alt="image">
-                        </div>
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-3.jpg') }}" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="projects-details-desc">
-                        <h3>Desarrollo a la medida</h3>
-                        <div class="features-text">
-                            <p>
-                                El desarrollo de software a medida es el servicio de diseño y creación de herramientas informáticas basadas en necesidades particulares de la empresa que lo contrata.
-                            </p>
-                            <p>
-                                Para ello, un equipo de expertos analizan las características de la compañía en busca de optimizar aquellos procesos clave para el negocio. El resultado de este análisis resulta en la creación de un sistema a medida que impacte de forma directa o indirecta en las ganancias de la empresa.
-                            </p>
-                            <p>
-                                En un mundo repleto de productos industrializados de fácil contratación, bajo costo de mantenimiento y rápida puesta en producción, no resulta tan fácil detectar la necesidad de contratar un servicio de desarrollo de software a medida. De hecho en muchos casos, dichos productos, también conocidos como software enlatados, resultan la mejor forma de gestionar las distintas partes de un emprendimiento con un decente nivel de control.
-                            </p>
-                            <p>
-                                No obstante, a medida que las empresas crecen, comienzan a destacarse por encima de su competencia, necesitando una herramienta que acompañe estas diferencias de modo eficiente. Es en este momento donde los productos industrializados muestran sus limitaciones al utilizar el enfoque de un producto hecho “para todos”. Algunas de estas condiciones pueden ser:
-                            </p>
-                            <p>
-                                Límites en la personalización del sistema
-                                Funcionalidades innecesarias
-                                Deficiente atención al cliente
-                                Actualizaciones contraproducentes, etc.
-                            </p>
-                            <p>
-                                Esto trae como consecuencia la obligación de actualizar nuestro modelo de trabajo a lo que la herramienta precisa, igualando nuestros procesos con los del resto de la competencia.
-                            </p>
-                            <p>
-                                El servicio desarrollo de software a medida permite extender estos límites y concentra los recursos en el lugar correcto, brindando a la empresa flexibilidad, atención al cliente y la gestión de prioridades necesarias para progresar.
-                            </p>
-                            <p>
-                                Características del desarrollo de software a medida
-                                Al contratar el servicio, el proveedor forma un equipo de profesionales con distintos roles para trabajar en el proyecto. La sinergia entre estos roles son los que le permitirán al equipo concentrarse en las áreas precisas de manera eficiente, para poder llevar a cabo el objetivo en tiempo y forma.
+{% block servicio_titulo %}Desarrollo a la medida{% endblock %}
 
-                                A su vez, se configura una metodología de trabajo estableciendo reglas de comunicación, formatos de reporte de estado y tiempos de entrega. Sumándose con otras herramientas, que le permiten al cliente supervisar su inversión, con el fin de garantizar la correcta interpretación del equipo en cuanto a las necesidades del negocio.
+{% block servicio_resumen %}
+    Diseñamos y construimos herramientas de software basadas en las necesidades particulares de su empresa, para
+    optimizar los procesos clave de su negocio.
+{% endblock %}
 
-                                De esta forma el avance se da de manera progresiva. Cumpliendo las metas propuestas, reaccionando eficientemente a posibles adaptaciones de la empresa y brindando atención personalizada de forma continua.
+{% block servicio_contenido %}
+    <p>Un equipo de expertos analiza las características de su compañía y crea un sistema a la medida que impacta de
+        forma directa o indirecta en sus resultados.</p>
 
-                            </p>
-                        </div>
-                        <div class="project-details-info">
-                            <div class="single-info-box">
-                                <h4>Author</h4>
-                                <span>Ervin Simmons</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Category</h4>
-                                <span>Design, Development</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Date</h4>
-                                <span>January 25, 2022</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Share</h4>
-                                <ul class="social">
-                                    <li>
-                                        <a href="#"> <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Works Link</h4>
-                                <a href="#" class="default-btn">Live Preview <span></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Project Details Area -->
+    <h3 class="servicio-subtitulo">¿Cuándo lo necesita?</h3>
+    <p>Los productos estándar —el llamado software enlatado— son de fácil contratación, bajo costo de mantenimiento y
+        rápida puesta en producción, y en muchos casos son la mejor opción. Pero a medida que las empresas crecen y se
+        diferencian de su competencia, un producto hecho «para todos» empieza a mostrar sus límites:</p>
+    <ul class="lista-check">
+        <li><i class="fas fa-check"></i> Límites en la personalización del sistema</li>
+        <li><i class="fas fa-check"></i> Funcionalidades innecesarias</li>
+        <li><i class="fas fa-check"></i> Atención al cliente deficiente</li>
+        <li><i class="fas fa-check"></i> Actualizaciones contraproducentes</li>
+    </ul>
+    <p class="mt-3">El resultado es tener que adaptar su modelo de trabajo a la herramienta, igualando sus procesos con
+        los del resto de la competencia. El desarrollo a la medida extiende esos límites y concentra los recursos donde
+        su empresa los necesita.</p>
+
+    <h3 class="servicio-subtitulo">Cómo trabajamos</h3>
+    <ol class="servicio-pasos">
+        <li>
+            <h4>Equipo multidisciplinario</h4>
+            <p>Conformamos un equipo con distintos roles; la sinergia entre ellos permite concentrarse en las áreas
+                precisas y cumplir los objetivos en tiempo y forma.</p>
+        </li>
+        <li>
+            <h4>Metodología clara</h4>
+            <p>Definimos reglas de comunicación, formatos de reporte de estado y tiempos de entrega, con herramientas
+                que le permiten supervisar su inversión.</p>
+        </li>
+        <li>
+            <h4>Avance progresivo</h4>
+            <p>Cumplimos metas por etapas, reaccionamos a los cambios de su empresa y brindamos atención personalizada
+                de forma continua.</p>
+        </li>
+    </ol>
 {% endblock %}

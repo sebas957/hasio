@@ -39,7 +39,7 @@ class EventoController extends AbstractController
             } else {
                 $respuesta = $carbono->inscribirEvento($id, $form->getData());
                 if (!$respuesta['error']) {
-                    $this->addFlash('success', 'El evento ha sido registrado');
+                    $this->addFlash('success', '¡Listo! Su inscripción quedó registrada. Lo esperamos.');
                     return $this->redirectToRoute('evento', ['id' => $id]);
                 }
                 $form->addError(new FormError('No pudimos registrar su inscripción, por favor intente de nuevo más tarde.'));

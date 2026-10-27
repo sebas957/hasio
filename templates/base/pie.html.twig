@@ -47,10 +47,9 @@
                     </div>
                     <ul class="footer-quick-links">
                         <li><a href="{{ path('nosotros') }}">Nosotros</a></li>
-                        <li><a href="projects.html">Servicios</a></li>
+                        <li><a href="{{ path('inicio') }}#servicios">Servicios</a></li>
                         <li><a href="{{ path('contacto') }}">Contactenos</a></li>
                         <li><a href="{{ path('soporte_politicas_privacidad') }}">Politica Privacidad</a></li>
-                        <li><a href="terms-condition.html">Terminos & Condiciones</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,21 +59,14 @@
                         <h3>Informacion Contacto</h3>
                     </div>
                     <div class="footer-info-contact">
-                        <span><strong>Telefono:</strong> <a href="tel:0802235678">+57 312 5829803</a></span>
+                        <span><strong>Telefono:</strong> <a href="tel:+573125829803">+57 312 5829803</a></span>
                     </div>
                     <div class="footer-info-contact">
-                        <span><strong>Correo:</strong> <a href="mailto:demo@example.com">administracion@semantica.com.co</a></span>
+                        <span><strong>Correo:</strong> <a href="mailto:administracion@semantica.com.co">administracion@semantica.com.co</a></span>
                     </div>
                     <div class="footer-info-contact">
-                        <span><strong>Direccion:</strong> Calle 34 N66 A 33, Conquistadores, Medellin - Antioquia</span>
+                        <span><strong>Dirección:</strong> Calle 34 # 66 A 33, oficina 201, Conquistadores, Medellín, Antioquia</span>
                     </div>
-                    <!-- Start Subscribe Area -->
-                    <form class="newsletter-form">
-                        <input type="email" class="input-newsletter" placeholder="Enter your email" name="EMAIL"
-                               required autocomplete="off">
-                        <button class="default-btn" type="submit">Suscribase <span></span></button>
-                    </form>
-                    <!-- End Subscribe Area -->
                 </div>
             </div>
         </div>
@@ -87,12 +79,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6">
-                <p><i class="far fa-copyright"></i> 2022 Semantica Digital - Todos los derechos reservados.</p>
+                <p><i class="far fa-copyright"></i> {{ "now"|date("Y") }} Semantica Digital - Todos los derechos reservados.</p>
             </div>
             <div class="col-lg-6 col-md-6">
                 <ul>
-                    <li><a href="terms-condition.html">Terminos & Condiciones</a>
-                    </li>
                     <li><a href="{{ path('soporte_politicas_privacidad') }}">Politicas Privacidad</a>
                     </li>
                 </ul>

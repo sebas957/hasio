@@ -9,9 +9,12 @@
     {% endblock %}
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('imagenes/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('imagenes/semantica/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('imagenes/semantica/favicon.png') }}" type="image/png" sizes="64x64">
     <!-- Bootstrap Min CSS -->
     <link rel="stylesheet" href="{{ asset('landingPage/css/bootstrap.min.css') }}">
     <!-- Animate Min CSS -->
@@ -28,6 +31,8 @@
     <link rel="stylesheet" href="{{ asset('landingPage/css/style.css') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('landingPage/css/responsive.css') }}">
+    <!-- Ajustes de diseño Semantica -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/semantica.css') }}">
 
     {% block stylesheets %}
     {% endblock %}

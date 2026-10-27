@@ -86,7 +86,7 @@ sudo -u www-data ssh -T git@github.com
 
 ```bash
 cd /var/www/html
-sudo -u www-data git clone git@github.com:<organizacion>/hasio.git hasio
+sudo -u www-data git clone git@github.com:sebas957/hasio.git hasio
 cd hasio
 ```
 
@@ -120,15 +120,8 @@ sudo chmod 640 .env
 sudo chown www-data:www-data .env
 ```
 
-Opcional (más rápido en producción): compilar el `.env` a PHP después del
-`composer install` del paso 6:
-
-```bash
-sudo -u www-data composer dump-env prod
-```
-
-Esto genera `.env.local.php` (también ignorado por git). Si se usa, **cada
-cambio en `.env` exige volver a correr este comando**.
+Solo se usa `.env`: no crear `.env.local`, `.env.prod` ni `.env.local.php`
+(no están en `.gitignore`).
 
 ## 6. Dependencias y caché
 
@@ -209,8 +202,7 @@ sudo /var/www/html/hasio/despliegue/actualizar.sh
 El script hace `git pull`, `composer install --no-dev` y `cache:clear`.
 
 Si el cambio agregó una variable nueva a `.env.example`, agregarla a mano al
-`.env` del servidor **antes** de correr el script (y repetir
-`composer dump-env prod` si se usa `.env.local.php`).
+`.env` del servidor **antes** de correr el script.
 
 ### Volver a la versión anterior
 
@@ -229,8 +221,8 @@ Para regresar a la rama después: `sudo -u www-data git checkout main`.
 ## Seguridad de secretos (antes de subir a GitHub)
 
 Archivos que **no** deben versionarse y ya están en `.gitignore`:
-`.env`, `.env.local`, `.env.local.php`, `.env.*.local`, `/var/`, `/vendor/`,
-`/.idea/`, `/.phpunit.cache/`, `/config/secrets/prod/prod.decrypt.private.php`.
+`.env`, `/var/`, `/vendor/`, `/.idea/`, `/.phpunit.cache/`,
+`/config/secrets/prod/prod.decrypt.private.php`.
 
 Archivos que **sí** se versionan y no tienen secretos reales:
 

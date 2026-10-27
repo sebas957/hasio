@@ -1,88 +1,46 @@
-{% extends 'base.html.twig' %}
-{% block content %}
+{% extends 'servicio/_servicio.html.twig' %}
 
-    <!-- Start Page Title Area -->
-    <div class="page-title-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h2>Implementacion</h2>
-                        <ul>
-                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
-                            <li>Implementacion</li>
-                        </ul>
-                    </div>
-                </div>
+{% block servicio_clave %}implementacion{% endblock %}
+
+{% block servicio_titulo %}Implementación{% endblock %}
+
+{% block servicio_resumen %}
+    Iniciamos la puesta en marcha de su ERP sobre bases sólidas: conocimiento de expertos en cada área y
+    lineamientos claros sobre el funcionamiento del software.
+{% endblock %}
+
+{% block servicio_contenido %}
+    <p>Cuando del funcionamiento de una herramienta digital depende la operación de toda la organización, la forma en
+        que se implementa es decisiva. Por eso nuestro servicio de implementación es modular.</p>
+
+    <h3 class="servicio-subtitulo">Dos formas de implementar</h3>
+    <div class="row">
+        <div class="col-md-6 d-flex">
+            <div class="servicio-tarjeta">
+                <i class="fas fa-sitemap"></i>
+                <h4>ERP completo</h4>
+                <p>Implementación de todos los módulos del ERP en un mismo proyecto.</p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex">
+            <div class="servicio-tarjeta">
+                <i class="fas fa-redo-alt"></i>
+                <h4>Secuencial</h4>
+                <p>Los módulos se implementan a medida que la empresa los va adquiriendo.</p>
             </div>
         </div>
     </div>
-    <!-- End Page Title Area -->
 
-    <!-- Start Project Details Area -->
-    <section class="project-details-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="image-sliders owl-carousel owl-theme">
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-1.jpg') }}" alt="image">
-                        </div>
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-2.jpg') }}" alt="image">
-                        </div>
-                        <div class="project-details-image">
-                            <img src="{{ asset('landingPage/img/project-details/project-details-3.jpg') }}" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="projects-details-desc">
-                        <h3>Implementacion</h3>
-                        <div class="features-text">
-                            <p>En el proceso de implementación de una herramienta o producto digital y más cuando de ello depende el efectivo funcionamiento de las organizaciones, es vital iniciar con unas bases fundamentadas en el conocimiento de expertos en cada área y de lineamientos sobre el funcionamiento de los productos de software. El servicio de implementación es modular y se presta para todo el ERP o si el cliente lo prefiere en un esquema secuencial donde se van implementando módulos a medida que van siendo adquiridos.
-                                El acompañamiento incluye capacitación, asesoría, ingeniería de procesos, recursos y formación. Cabe aclarar que en ninguno de los casos el implementador intervendrá en la manipulación de los datos.
-                            </p>
-                        </div>
-                        <div class="project-details-info">
-                            <div class="single-info-box">
-                                <h4>Author</h4>
-                                <span>Ervin Simmons</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Category</h4>
-                                <span>Design, Development</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Date</h4>
-                                <span>January 25, 2022</span>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Share</h4>
-                                <ul class="social">
-                                    <li>
-                                        <a href="#"> <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="single-info-box">
-                                <h4>Works Link</h4>
-                                <a href="#" class="default-btn">Live Preview <span></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Project Details Area -->
+    <h3 class="servicio-subtitulo">El acompañamiento incluye</h3>
+    <ul class="lista-check">
+        <li><i class="fas fa-check"></i> Capacitación</li>
+        <li><i class="fas fa-check"></i> Asesoría</li>
+        <li><i class="fas fa-check"></i> Ingeniería de procesos</li>
+        <li><i class="fas fa-check"></i> Recursos y formación</li>
+    </ul>
+
+    <div class="servicio-nota">
+        <i class="fas fa-info-circle"></i>
+        <p>En ningún caso el implementador interviene en la manipulación de los datos de su empresa.</p>
+    </div>
 {% endblock %}

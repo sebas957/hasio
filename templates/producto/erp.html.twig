@@ -16,17 +16,24 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12">
                             <div class="main-banner-content">
+                                <span class="seccion-etiqueta">Producto</span>
                                 <h1>Semantica ERP <span
-                                            class="color-text">Logistica + Programacion Turnos</span>
+                                            class="color-text">Logística + Programación de turnos</span>
                                 </h1>
-                                <p>Su software ERP tipo lego en la nube, diseñado para grandes empresas y soluciones
-                                    para sectores especificos.
+                                <p>Su software ERP modular en la nube, diseñado para grandes empresas y con soluciones
+                                    para sectores específicos.
                                 </p>
+                                <div class="banner-btn">
+                                    <a class="default-btn" href="{{ path('contacto') }}">
+                                        Solicite una demostración
+                                        <span></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
-                            <div class="banner-image">
-                                <img src="{{ asset('landingPage/img/home-font-erp.png') }}" alt="logo">
+                            <div class="banner-image banner-image-foto">
+                                <img src="{{ asset('landingPage/img/home-font-erp.png') }}" alt="Semantica ERP">
                             </div>
                         </div>
                     </div>
@@ -37,12 +44,14 @@
     </div>
     <!-- End Home Area -->
     <!-- Start tap  -->
+    <section class="erp-modulos section-padding">
     <div class="container">
-        <div class="row justify-content-center align-items-center mt-3">
-            <h3>Gestione todos los procesos de su compañia + Logistica + Programacion Turnos</h3>
+        <div class="section-title">
+            <span class="seccion-etiqueta">Módulos</span>
+            <h2>Gestione todos los procesos de su compañía</h2>
         </div>
-        <div class="d-flex justify-content-center align-content-center">
-            <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+        <div class="d-flex justify-content-center">
+            <ul class="nav nav-pills erp-pestanas" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active mr-1" id="pills-home-tab" data-toggle="pill" href="#pills-finanzas"
                        role="tab"
@@ -69,10 +78,10 @@
                 </li>
             </ul>
         </div>
-        <div class="tab-content mb-2" id="pills-tabContent">
+        <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-finanzas" role="tabpanel"
                  aria-labelledby="pills-home-tab">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="overview-image">
                             <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
@@ -81,15 +90,15 @@
                     <div class="col-md-6">
                         <div class="overview-content">
                             <h2>Funcionalidad suite Financiera</h2>
-                            <p class="text-justify">Acceda a toda la información financiera de su compañía,
+                            <p>Acceda a toda la información financiera de su compañía,
                                 genere reportes detallados de forma sencilla y cuente con información altamente
                                 confiable.</p>
                             <ul class="features-list mb-3">
-                                <li><span class="active"><i class="fas fa-angle-right"></i> Contabilidad general</span>
+                                <li><span class="active">Contabilidad general</span>
                                 </li>
-                                <li><span><i class="fas fa-angle-right"></i> Activos fijos</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Informacion exogena</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Costos</span></li>
+                                <li><span>Activos fijos</span></li>
+                                <li><span>Informacion exogena</span></li>
+                                <li><span>Costos</span></li>
                             </ul>
                         </div>
                     </div>
@@ -97,7 +106,7 @@
             </div>
             <div class="tab-pane fade" id="pills-compras-tesoreria" role="tabpanel"
                  aria-labelledby="pills-home-tab">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="overview-image">
                             <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
@@ -106,20 +115,20 @@
                     <div class="col-md-6">
                         <div class="overview-content">
                             <h2>Suite comercial Compras & tesoreria</h2>
-                            <p class="text-justify">Gestiones sus compras desde la fuente
+                            <p>Gestiones sus compras desde la fuente
                                 (solicitud-forecast-abastecimiento-stock-proyectos) y consolide
                                 la relacion con sus proveedores desde la programacion de pagos</p>
                             <ul class="features-list mb-3">
-                                <li><span class="active"><i class="fas fa-angle-right"></i> Compras de bienes y servicios</span>
+                                <li><span class="active">Compras de bienes y servicios</span>
                                 </li>
-                                <li><span><i class="fas fa-angle-right"></i> Solicitudes & Ordenes</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Lista precios</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Informes forecast</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Anticipos</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Legalizacion</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Importacion</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Archivos planos</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Informes a corte</span></li>
+                                <li><span>Solicitudes & Ordenes</span></li>
+                                <li><span>Lista precios</span></li>
+                                <li><span>Informes forecast</span></li>
+                                <li><span>Anticipos</span></li>
+                                <li><span>Legalizacion</span></li>
+                                <li><span>Importacion</span></li>
+                                <li><span>Archivos planos</span></li>
+                                <li><span>Informes a corte</span></li>
                             </ul>
                         </div>
                     </div>
@@ -127,7 +136,7 @@
             </div>
             <div class="tab-pane fade" id="pills-ventas-cartera" role="tabpanel"
                  aria-labelledby="pills-home-tab">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="overview-image">
                             <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
@@ -136,16 +145,16 @@
                     <div class="col-md-6">
                         <div class="overview-content">
                             <h2>Suite comercial Ventas & Cartera</h2>
-                            <p class="text-justify">Disponga de la informacion en tiempo real de la gestion comercial de
+                            <p>Disponga de la informacion en tiempo real de la gestion comercial de
                                 ventas y cobro</p>
                             <ul class="features-list mb-3">
-                                <li><span class="active"><i class="fas fa-angle-right"></i> Facturacion</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Facturacion electronica DIAN</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Control de inventario</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Pedidos</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Remisiones</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Listas precios</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Clasificacion CXC</span></li>
+                                <li><span class="active">Facturacion</span></li>
+                                <li><span>Facturacion electronica DIAN</span></li>
+                                <li><span>Control de inventario</span></li>
+                                <li><span>Pedidos</span></li>
+                                <li><span>Remisiones</span></li>
+                                <li><span>Listas precios</span></li>
+                                <li><span>Clasificacion CXC</span></li>
                             </ul>
                         </div>
                     </div>
@@ -153,7 +162,7 @@
             </div>
             <div class="tab-pane fade" id="pills-recurso-humano" role="tabpanel"
                  aria-labelledby="pills-home-tab">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="overview-image">
                             <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
@@ -162,17 +171,17 @@
                     <div class="col-md-6">
                         <div class="overview-content">
                             <h2>Gestion Recurso humano & Nomina</h2>
-                            <p class="text-justify">Vincule la gestión de su recurso humano a la estrategia corporativa
+                            <p>Vincule la gestión de su recurso humano a la estrategia corporativa
                                 de su empresa,
                                 automatizando los procesos asociados a la gestión operativa y táctica de su
                                 personal.</p>
                             <ul class="features-list mb-3">
-                                <li><span class="active"><i class="fas fa-angle-right"></i> Nomina</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Seguridad social</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Seguridad y salud en el trabajo</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Contratacion</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Bienestar</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Portal auto-gestion</span></li>
+                                <li><span class="active">Nomina</span></li>
+                                <li><span>Seguridad social</span></li>
+                                <li><span>Seguridad y salud en el trabajo</span></li>
+                                <li><span>Contratacion</span></li>
+                                <li><span>Bienestar</span></li>
+                                <li><span>Portal auto-gestion</span></li>
                             </ul>
                         </div>
                     </div>
@@ -180,7 +189,7 @@
             </div>
             <div class="tab-pane fade" id="pills-inventario" role="tabpanel"
                  aria-labelledby="pills-home-tab">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="overview-image">
                             <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
@@ -189,18 +198,16 @@
                     <div class="col-md-6">
                         <div class="overview-content">
                             <h2>Inventario y almacenamiento</h2>
-                            <p class="text-justify">Maneja y controla de manera ágil y práctica los movimientos de los
+                            <p>Maneja y controla de manera ágil y práctica los movimientos de los
                                 inventarios de tu compañía.</p>
                             <ul class="features-list mb-3">
-                                <li><span class="active"><i class="fas fa-angle-right"></i> Control Stock</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Bodega, ubicacion, tercero</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Movimientos de control (comodatos)</span>
+                                <li><span class="active">Control Stock</span></li>
+                                <li><span>Bodega, ubicacion, tercero</span></li>
+                                <li><span>Movimientos de control (comodatos)</span>
                                 </li>
-                                <li>
-                                    <span><i class="fas fa-angle-right"></i> Clasificacion linea, grupo y subgrupo</span>
-                                </li>
-                                <li><span><i class="fas fa-angle-right"></i> Codigos de barra, QR</span></li>
-                                <li><span><i class="fas fa-angle-right"></i> Registro de entrega</span></li>
+                                <li><span>Clasificacion linea, grupo y subgrupo</span></li>
+                                <li><span>Codigos de barra, QR</span></li>
+                                <li><span>Registro de entrega</span></li>
                             </ul>
                         </div>
                     </div>
@@ -208,15 +215,17 @@
             </div>
         </div>
     </div>
+    </section>
     <!-- End tap -->
 
     <!-- Start Overview Section -->
-    <section class="overview-section bg-grey section-padding">
+    <section class="overview-section erp-sectores bg-grey section-padding">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-lg-6">
                     <div class="overview-content">
-                        <h2>Logistica & transporte</h2>
+                        <span class="seccion-etiqueta">Solución especializada</span>
+                        <h2>Logística & transporte</h2>
                         <p>Vamos hasta la ultima milla, soluciones especializadas con diferentes aplicaciones
                             para el manejo de los procesos logisticos y de transporte. Toda la informacion tiene
                             registro
@@ -237,7 +246,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="overview-content">
-                        <h2>Programacion de turnos</h2>
+                        <span class="seccion-etiqueta">Solución especializada</span>
+                        <h2>Programación de turnos</h2>
                         <p>Analice la informacion detallada por puesto y proyecto, determine de forma precisa el
                             costo de su operacion y controle los margenes de rentabilidad de su negocio</p>
                         <ul class="features-list">
@@ -257,83 +267,103 @@
     </section>
     <!-- End Overview Section -->
 
-    <!-- Start Testimonial Section -->
-    <section class="testimonial-section bg-principal-azul-semantica section-padding-50">
+    <!-- Start Industrias Section -->
+    <section class="erp-industrias section-padding">
         <div class="container">
             <div class="section-title">
-                <p class="text-white">INDUSTRIAS</p>
-                <h2 class="text-white">Entendemos el Core de su empresa. Somos expertos</h2>
+                <span class="seccion-etiqueta">Industrias</span>
+                <h2>Entendemos el core de su empresa</h2>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="testimonial-slider owl-carousel owl-theme">
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-1.svg" alt="">
-                            <figcaption>Comercializador</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-2.svg" alt="">
-                            <figcaption>Construcción y Obras Civiles</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-3.svg" alt="">
-                            <figcaption>Farmacéutica</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-5.svg" alt="">
-                            <figcaption>Manufactura</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-6.svg" alt="">
-                            <figcaption>Servicios</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-7.svg" alt="">
-                            <figcaption>Textil</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-8.svg" alt="">
-                            <figcaption>Agricultura Flores/Palma</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-9.svg" alt="">
-                            <figcaption>Alimentos</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-10.svg" alt="">
-                            <figcaption>Educativo</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-11.svg" alt="">
-                            <figcaption>Metalmecánica</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-12.svg" alt="">
-                            <figcaption>Ferreterías-Autopartes y accesorios</figcaption>
-                        </figure>
-                        <figure style="height: 122px; width: 90px">
-                            <img src="https://www.ofima.com/wp-content/uploads/2022/01/icono-industrias-13.svg" alt="">
-                            <figcaption>Plástico y caucho
-                            </figcaption>
-                        </figure>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-store"></i>
+                        <span>Comercializador</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Construcción y obras civiles</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-pills"></i>
+                        <span>Farmacéutica</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-industry"></i>
+                        <span>Manufactura</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span>Servicios</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-tshirt"></i>
+                        <span>Textil</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-seedling"></i>
+                        <span>Agricultura, flores y palma</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-utensils"></i>
+                        <span>Alimentos</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Educativo</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-cogs"></i>
+                        <span>Metalmecánica</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-tools"></i>
+                        <span>Ferreterías, autopartes y accesorios</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <div class="erp-industria">
+                        <i class="fas fa-recycle"></i>
+                        <span>Plástico y caucho</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Testimonial Section -->
+    <!-- End Industrias Section -->
 
     <!-- Start beneficios  -->
-    <section class="services-section pt-50 pb-50 bg-grey">
-        <div class="row justify-content-center align-items-center">
-            <h3>Llenese de motivos para escoger una herramienta ERP +eficiente +simple +efectiva</h3>
-        </div>
+    <section class="services-section erp-beneficios section-padding bg-grey">
         <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Beneficios</span>
+                <h2>Una herramienta ERP más eficiente, simple y efectiva</h2>
+            </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-cash"></i>
+                            <i class="fas fa-hand-holding-usd"></i>
                         </div>
                         <h3>Costo / Beneficio</h3>
                         <p>Presupueste su inversión, mídala a corto plazo y optimice sus procesos.</p>
@@ -343,7 +373,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-display1"></i>
+                            <i class="fas fa-chart-pie"></i>
                         </div>
                         <h3>Análisis inteligente</h3>
                         <p>Convierta la información en acciones estratégicas y bien fundamentadas.</p>
@@ -352,7 +382,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-cloud"></i>
+                            <i class="fas fa-cloud"></i>
                         </div>
                         <h3>Información en la nube</h3>
                         <p>Acceda a la data de su compañía de forma remota, sin complicaciones técnicas y de manera
@@ -362,19 +392,17 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-safe"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Seguridad total</h3>
                         <p>Opere su compañía a grandes escalas sin preocuparse por la seguridad de la información.</p>
 
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-timer"></i>
+                            <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3>Más productividad</h3>
                         <p>Optimice la productividad de sus empleados eliminando procesos manuales</p>
@@ -384,7 +412,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-box2"></i>
+                            <i class="fas fa-boxes"></i>
                         </div>
                         <h3>Producción optimizada</h3>
                         <p>Controle sus inventarios, la planeación, la exactitud en los tiempos de entrega y
@@ -395,7 +423,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-like2"></i>
+                            <i class="fas fa-smile"></i>
                         </div>
                         <h3>Clientes satisfechos</h3>
                         <p>Centralice la información de sus clientes y enfoque sus esfuerzos comerciales en construir y
@@ -405,7 +433,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-services-item">
                         <div class="services-icon">
-                            <i class="pe-7s-share"></i>
+                            <i class="fas fa-sync-alt"></i>
                         </div>
                         <h3>Procesos automatizados</h3>
                         <p>Automatice sus procesos con herramientas de parametrización de precios, descuentos y
@@ -417,23 +445,25 @@
     </section>
     <!-- End tap -->
 
-    <div class="gerencia-area mb-5">
-        <div class="d-table d-flex justify-content-center align-items-center align-content-center">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <a href="#" data-toggle="modal" data-target="#staticBackdrop"
-                   data-theVideo="https://www.youtube.com/embed/SpAqArgdt2w">
-                    <i class="fab fa-youtube fa-8x" style="color: #FF0000"></i>
-                </a>
-            </div>
-            <div class="col-4">
-                <p class="text-video">“Las ventajas competitivas deben estar basadas en el modelo de negocio de cada cliente, su calidad
-                    en la prestación de servicios y venta de productos;
-                    queremos llevar las mismas herramientas a costos asequibles!"</p>
-                <a href="" class="default-btn">Ver caso <span></span></a>
+    <section class="gerencia-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <a href="#" class="erp-video-btn" data-toggle="modal" data-target="#staticBackdrop"
+                       data-theVideo="https://www.youtube.com/embed/LSjb2KWS4A8" aria-label="Ver video">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <div class="col-lg-7">
+                    <p class="text-video">“Las ventajas competitivas deben estar basadas en el modelo de negocio
+                        de cada cliente, su calidad en la prestación de servicios y venta de productos; queremos llevar
+                        las mismas herramientas a costos asequibles.”</p>
+                    <a href="#" class="default-btn-one" data-toggle="modal" data-target="#staticBackdrop"
+                       data-theVideo="https://www.youtube.com/embed/LSjb2KWS4A8">Ver video <span></span></a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Button trigger modal -->
 
@@ -474,12 +504,6 @@
 
         $(document).ready(function () {
             autoPlayYouTubeModal();
-
-            $(".owl-carousel").owlCarousel({
-                center: true,
-                items:4,
-                loop:true,
-            });
         });
     </script>
 {% endblock %}

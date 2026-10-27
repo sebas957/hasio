@@ -20,19 +20,35 @@ class ContactoType extends AbstractType
     {
         $builder
             ->add('nombre', TextType::class, [
-                'constraints' => [new Assert\NotBlank(), new Assert\Length(max: 200)],
+                'constraints' => [
+                    new Assert\NotBlank(message: 'Escriba su nombre.'),
+                    new Assert\Length(max: 200, maxMessage: 'Máximo {{ limit }} caracteres.'),
+                ],
             ])
             ->add('telefono', TextType::class, [
-                'constraints' => [new Assert\NotBlank(), new Assert\Length(max: 100)],
+                'constraints' => [
+                    new Assert\NotBlank(message: 'Escriba un teléfono de contacto.'),
+                    new Assert\Length(max: 100, maxMessage: 'Máximo {{ limit }} caracteres.'),
+                ],
             ])
             ->add('correo', EmailType::class, [
-                'constraints' => [new Assert\NotBlank(), new Assert\Email(), new Assert\Length(max: 200)],
+                'constraints' => [
+                    new Assert\NotBlank(message: 'Escriba su correo electrónico.'),
+                    new Assert\Email(message: 'El correo electrónico no es válido.'),
+                    new Assert\Length(max: 200, maxMessage: 'Máximo {{ limit }} caracteres.'),
+                ],
             ])
             ->add('empresa', TextType::class, [
-                'constraints' => [new Assert\NotBlank(), new Assert\Length(max: 200)],
+                'constraints' => [
+                    new Assert\NotBlank(message: 'Escriba el nombre de su empresa.'),
+                    new Assert\Length(max: 200, maxMessage: 'Máximo {{ limit }} caracteres.'),
+                ],
             ])
             ->add('descripcion', TextareaType::class, [
-                'constraints' => [new Assert\NotBlank(), new Assert\Length(max: 2000)],
+                'constraints' => [
+                    new Assert\NotBlank(message: 'Cuéntenos en qué podemos ayudarle.'),
+                    new Assert\Length(max: 2000, maxMessage: 'Máximo {{ limit }} caracteres.'),
+                ],
             ])
             ->add('guardar', SubmitType::class, ['label' => 'Guardar']);
     }

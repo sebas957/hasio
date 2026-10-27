@@ -1,105 +1,91 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <!-- Start Page Title Area -->
-    <div class="page-title-area">
-        <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="page-title-content">
-                        <h2>Contacto</h2>
-                        <ul>
-                            <li><a href="{{ path('inicio') }}">Inicio</a>
-                            </li>
-                            <li>Contacte un asesor comercial</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
+    {{ include('_cabecera.html.twig', {'titulo': 'Contacto', 'descripcion': 'Hable con un asesor comercial sobre su proyecto.', 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Contacto'}]}) }}
 
     <!-- Start Contact Section -->
-    <div class="contact-section section-padding">
+    <section class="contacto-area section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="contact-information-box-3">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="single-contact-info-box">
-                                    <div class="contact-info">
-                                        <h6>Direccion:</h6>
-                                        <p>Cll 34 Nro 66 A 33 Ofc 201, Conquistadores</p>
-                                        <p>Medellin, Antioquia - Colombia</p>
-                                    </div>
-                                    <div class="contact-info-bg-icon">
-                                        <i class="pe-7s-map-marker"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="single-contact-info-box">
-                                    <div class="contact-info">
-                                        <h6>Telefono</h6>
-                                        <p>+57 312 5829803</p>
-                                    </div>
-                                    <div class="contact-info-bg-icon">
-                                        <i class="pe-7s-call"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="single-contact-info-box">
-                                    <div class="contact-info">
-                                        <h6>Correo:</h6>
-                                        <p>administracion@semantica.com.co</p>
-                                        <p>investigacion@semantica.com.co</p>
-                                    </div>
-                                    <div class="contact-info-bg-icon">
-                                        <i class="pe-7s-mail"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4">
+                    <div class="contacto-intro">
+                        <span class="seccion-etiqueta">Contacto</span>
+                        <h2>Hablemos de su proyecto</h2>
+                        <p>Déjenos sus datos y un asesor comercial se comunicará con usted para ampliar la información.</p>
                     </div>
+                    <ul class="contacto-datos">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Dirección</h3>
+                                <p>Calle 34 # 66 A 33, oficina 201, Conquistadores<br>Medellín, Antioquia, Colombia</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p><a href="tel:+573125829803">+57 312 5829803</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Correo</h3>
+                                <p>
+                                    <a href="mailto:administracion@semantica.com.co">administracion@semantica.com.co</a><br>
+                                    <a href="mailto:investigacion@semantica.com.co">investigacion@semantica.com.co</a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-8 col-md-12">
-                    <div class="contact-form contact-form-3">
-                        <p class="form-message"></p>
+                <div class="col-lg-8">
+                    <div class="contacto-formulario">
                         {{ include('_avisos.html.twig') }}
-                        {{ form_start(form, { 'attr': {'class': 'form', 'id': "form_contacto"} }) }}
-                        {{ form_errors(form) }}
+                        {{ form_start(form, { 'attr': {'id': 'form_contacto'} }) }}
+                        {% if form.vars.errors|length %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for error in form.vars.errors %}{{ error.message }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+                            </div>
+                        {% endif %}
                         <div class="row">
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ form_widget(form.nombre, { 'attr': {'placeholder': 'Su nombre'} }) }}
+                                    {{ form_label(form.nombre, 'Nombre completo') }}
+                                    {{ form_widget(form.nombre, { 'attr': {'placeholder': 'Ej. Ana Gómez', 'autocomplete': 'name', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ form_widget(form.correo, { 'attr': {'placeholder': 'Correo'} }) }}
-                                    {{ form_errors(form.correo) }}
+                                    {{ form_label(form.empresa, 'Empresa') }}
+                                    {{ form_widget(form.empresa, { 'attr': {'placeholder': 'Nombre de su empresa', 'autocomplete': 'organization', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ form_widget(form.telefono, { 'attr': {'placeholder': 'Telefono'} }) }}
+                                    {{ form_label(form.correo, 'Correo electrónico') }}
+                                    {{ form_widget(form.correo, { 'attr': {'placeholder': 'nombre@empresa.com', 'autocomplete': 'email', 'maxlength': 200} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ form_widget(form.empresa, { 'attr': {'placeholder': 'Empresa'} }) }}
+                                    {{ form_label(form.telefono, 'Teléfono') }}
+                                    {{ form_widget(form.telefono, { 'attr': {'placeholder': '+57 300 000 0000', 'autocomplete': 'tel', 'inputmode': 'tel', 'maxlength': 100} }) }}
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12">
+                            <div class="col-12">
                                 <div class="form-group">
-                                    {{ form_widget(form.descripcion, { 'attr': {'placeholder': 'Su pregunta', 'cols':30, 'rows':6} }) }}
+                                    {{ form_label(form.descripcion, '¿En qué podemos ayudarle?') }}
+                                    {{ form_widget(form.descripcion, { 'attr': {'placeholder': 'Cuéntenos brevemente sobre su necesidad o proyecto', 'rows': 6, 'maxlength': 2000} }) }}
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-content-center ">
-                            {{ form_widget(form.guardar, { 'attr': {'class': 'btnCustom'} }) }}
+                        <div class="contacto-enviar">
+                            <p class="contacto-privacidad">
+                                Al enviar este formulario acepta nuestra
+                                <a href="{{ path('soporte_politicas_privacidad') }}">política de privacidad</a>.
+                            </p>
+                            {{ form_widget(form.guardar, { 'label': 'Enviar mensaje', 'attr': {'class': 'default-btn'} }) }}
                         </div>
                         <input type="hidden" name="recaptcha_token">
                         {{ form_end(form) }}
@@ -107,9 +93,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- End Contact Section -->
 {% endblock %}
 {% block javascriptsPersonales %}
     {{ include('_recaptcha.html.twig', {'formulario': 'form_contacto', 'accion': 'contacto'}) }}
+    <script>
+        // Evita dobles envios mientras se obtiene el token y se procesa la solicitud
+        document.getElementById('form_contacto').addEventListener('submit', function (evento) {
+            var boton = evento.submitter;
+            if (boton) {
+                boton.classList.add('enviando');
+                boton.textContent = 'Enviando…';
+            }
+        });
+    </script>
 {% endblock %}
