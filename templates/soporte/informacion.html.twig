@@ -1,0 +1,25 @@
+{% extends 'base_claro.html.twig' %}
+{% block title %}Caso creado | Soporte Semantica{% endblock %}
+{% block content %}
+
+    <section class="contacto-gracias">
+        <div class="container">
+            <div class="contacto-gracias-caja">
+                {{ include('_avisos.html.twig') }}
+                <span class="contacto-gracias-icono"><i class="fas fa-check"></i></span>
+                <h1>Recibimos su caso</h1>
+                <p>Uno de nuestros asesores se comunicará con usted por alguno de los medios que nos dejó. Guarde el
+                    número del caso: con él y su correo puede consultar el estado cuando quiera.</p>
+                <div class="contacto-radicado">
+                    <span>Número de caso</span>
+                    <strong>#{{ codigoCaso }}</strong>
+                </div>
+                <div class="contacto-gracias-botones">
+                    <a href="{{ path('soporte') }}#consulta" class="default-btn">Consultar estado <span></span></a>
+                    <a href="{{ path('soporte') }}" class="default-btn-one">Volver a soporte <span></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

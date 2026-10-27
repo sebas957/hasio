@@ -1,0 +1,68 @@
+{# Ilustracion conceptual del flujo de informacion en Semantica ERP (no representa la interfaz) #}
+<svg class="flujo" viewBox="0 0 520 430" role="img" aria-labelledby="flujo-titulo">
+    <title id="flujo-titulo">Una orden de compra recorre inventario, facturación, cartera y contabilidad hasta los estados financieros</title>
+    <defs>
+        <linearGradient id="flu-degradado" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3681c4"/>
+            <stop offset="1" stop-color="#143049"/>
+        </linearGradient>
+        <pattern id="flu-puntos" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.4" fill="#c9d8ea"/>
+        </pattern>
+        <filter id="flu-sombra" x="-20%" y="-30%" width="140%" height="180%">
+            <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0d2547" flood-opacity="0.12"/>
+        </filter>
+        <marker id="flu-flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#3681c4"/>
+        </marker>
+    </defs>
+
+    <rect x="0" y="0" width="520" height="430" rx="20" fill="#eef5fc"/>
+    <rect x="0" y="0" width="520" height="430" rx="20" fill="url(#flu-puntos)" opacity="0.7"/>
+
+    {# Encabezado #}
+    <g transform="translate(150, 16)">
+        <rect width="220" height="30" rx="15" fill="#143049"/>
+        <text x="110" y="19.5" text-anchor="middle" class="flu-insignia">Un solo flujo de información</text>
+    </g>
+
+    {# Conexiones en serpentina #}
+    <g class="flu-lineas" stroke="#3681c4" stroke-width="1.8" stroke-dasharray="5 5" fill="none" marker-end="url(#flu-flecha)">
+        <path d="M240 92 H276"/>
+        <path d="M380 124 V176"/>
+        <path d="M280 212 H244"/>
+        <path d="M140 244 V296"/>
+        <path d="M240 332 H276"/>
+    </g>
+
+    {# Pasos: x, y, icono Font Awesome, modulo, accion #}
+    {% set pasos = [
+        [40, 60, 'f07a', 'Compras', 'Orden de compra'],
+        [280, 60, 'f468', 'Inventario', 'Entrada a bodega'],
+        [280, 180, 'f571', 'Ventas', 'Factura electrónica'],
+        [40, 180, 'f555', 'Cartera', 'Recaudo de cartera'],
+        [40, 300, 'f02d', 'Contabilidad', 'Asiento automático'],
+        [280, 300, 'f201', 'Gerencia', 'Estados financieros'],
+    ] %}
+    {% for p in pasos %}
+        <g transform="translate({{ p[0] }}, {{ p[1] }})" filter="url(#flu-sombra)">
+            <rect width="200" height="64" rx="12" fill="#fff"/>
+            {% if loop.last %}
+                <circle cx="30" cy="32" r="17" fill="url(#flu-degradado)"/>
+                <text x="30" y="36.5" text-anchor="middle" class="flu-icono flu-icono-claro">&#x{{ p[2] }};</text>
+            {% else %}
+                <circle cx="30" cy="32" r="17" fill="#eef5fc"/>
+                <text x="30" y="36.5" text-anchor="middle" class="flu-icono">&#x{{ p[2] }};</text>
+            {% endif %}
+            <text x="56" y="27" class="flu-paso">{{ '%02d'|format(loop.index) }} · {{ p[3] }}</text>
+            <text x="56" y="45" class="flu-accion">{{ p[4] }}</text>
+        </g>
+    {% endfor %}
+
+    {# Cierre #}
+    <g transform="translate(105, 386)" filter="url(#flu-sombra)">
+        <rect width="310" height="32" rx="16" fill="#fff"/>
+        <text x="24" y="20.5" text-anchor="middle" class="flu-icono">&#xf0e7;</text>
+        <text x="40" y="20.5" class="flu-cierre">Información en tiempo real, sin reprocesos</text>
+    </g>
+</svg>

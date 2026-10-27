@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Acerca de nosotros</h2>
+                        <ul>
+                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                            <li>Informacion general</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start About Section -->
+    <section class="about-area section-padding">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="about-content">
+                        <div class="about-content-text">
+                            <h2><span class="color-text">Semantica Digital</span> fabrica de soluciones y servicios.</h2>
+                            <p>Somos una empresa de software y componenetes de tecnologia hechos con herramientas modernas y colaboradores altamente calificados.
+                                Nuestro modelo de negocio está basado en la calidad de nuestros productos, altos estándares de servicio y flexibilidad hacia los requerimientos de los clientes, además ofrecemos al mercado la mejor relación costo beneficio</p>
+                            <div class="skills">
+                                <div class="skill-item">
+                                    <h6>Semantica ERP <em>80%</em></h6>
+                                    <div class="skill-progress">
+                                        <div class="progres" data-value="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <h6>Implementacion & Capacitacion<em>75%</em></h6>
+                                    <div class="skill-progress">
+                                        <div class="progres" data-value="75%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <h6>Consultoria <em>70%</em></h6>
+                                    <div class="skill-progress">
+                                        <div class="progres" data-value="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div class="about-image">
+                        <img src="{{ asset('landingPage/img/about.jpg') }}" alt="About image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base_claro.html.twig' %}
+{% block content %}
+
+    <!-- Start Home Area -->
+    <div class="home-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="main-banner-content">
+                                <h1>Se creo el registro de contactenos # <span
+                                            class="color-text">{{ codigoContacto }}</span>
+                                </h1>
+                                <p>Gracias por comunicarse con nosotros, uno de nuestros asesores se estará contactando con usted para
+                                    ampliar la información.
+                                </p>
+                                <div class="banner-btn">
+                                    <a href="{{ path('inicio') }}" class="default-btn-one">
+                                        Inicio
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="banner-image">
+                                <img src="{{ asset('landingPage/img/home-font.png') }}" alt="logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grey-cr"></div>
+    </div>
+    <!-- End Home Area -->
+
+{% endblock %}

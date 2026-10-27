@@ -1,0 +1,31 @@
+{#
+    Cabecera de las paginas internas: migas, titulo y una linea de contexto
+    sobre fondo de marca, sin fotografia.
+    Uso: {{ include('_cabecera.html.twig', {
+        'titulo': 'Contacto',
+        'descripcion': 'Texto opcional',
+        'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Contacto'}]
+    }) }}
+    La ultima miga es la pagina actual y va sin url.
+#}
+<header class="cabecera-pagina">
+    <div class="container">
+        <nav aria-label="Ruta de navegación">
+            <ol class="cabecera-migas">
+                {% for miga in migas %}
+                    <li{% if loop.last %} aria-current="page"{% endif %}>
+                        {% if miga.url is defined and not loop.last %}
+                            <a href="{{ miga.url }}">{{ miga.texto }}</a>
+                        {% else %}
+                            {{ miga.texto }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        </nav>
+        <h1>{{ titulo }}</h1>
+        {% if descripcion is defined and descripcion %}
+            <p class="cabecera-descripcion">{{ descripcion }}</p>
+        {% endif %}
+    </div>
+</header>

@@ -1,0 +1,12 @@
+twig:
+    file_name_pattern: '*.twig'
+    form_themes: ['bootstrap_4_layout.html.twig']
+    globals:
+        # URL de Carbono (mesa de ayuda) terminada en "/", para los enlaces de
+        # login y soporte: carbono_url ~ 'soporte'
+        carbono_url: '%env(BASE_CARBONO)%'
+        recaptcha_site_key: '%env(RECAPTCHA_SITE_KEY)%'
+
+when@test:
+    twig:
+        strict_variables: true

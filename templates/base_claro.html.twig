@@ -1,0 +1,6 @@
+{# Paginas cuya cabecera es clara: el menu usa el logo oscuro #}
+{% extends 'base.html.twig' %}
+
+{% block menu %}
+    {{ include('base/menu.html.twig', {'oscuro': false}) }}
+{% endblock %}

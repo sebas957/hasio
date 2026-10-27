@@ -1,0 +1,106 @@
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="techmax-responsive-nav index-navber-responsive">
+        <div class="container">
+            <div class="techmax-responsive-menu">
+                <div class="logo">
+                    <a href="{{ path('inicio') }}">
+                        {% if oscuro == false %}
+                            <img src="{{ asset('landingPage/img/logo-black.png') }}" class="white-logo" alt="logo">
+                            <img src="{{ asset('landingPage/img/logo-black.png') }}" class="black-logo" alt="logo">
+                        {% else %}
+                            <img src="{{ asset('landingPage/img/logo.png') }}" class="white-logo" alt="logo">
+                            <img src="{{ asset('landingPage/img/logo-black.png') }}" class="black-logo" alt="logo">
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="techmax-nav {% if oscuro == false %}index-navber{% endif %}">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="{{ path('inicio') }}">
+                    {% if oscuro == false %}
+                        <img src="{{ asset('landingPage/img/logo-black.png') }}" class="white-logo" alt="logo">
+                        <img src="{{ asset('landingPage/img/logo-black.png') }}" class="black-logo" alt="logo">
+                    {% else %}
+                        <img src="{{ asset('landingPage/img/logo.png') }}" class="white-logo" alt="logo">
+                        <img src="{{ asset('landingPage/img/logo-black.png') }}" class="black-logo" alt="logo">
+                    {% endif %}
+                </a>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <div class="d-lg-none d-sm-block">
+                            <li class="nav-item">
+                                <a href="{{ carbono_url ~ 'login' }}" class="nav-link">Log in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ carbono_url ~ 'soporte' }}" class="nav-link">Soporte</a>
+                            </li>
+                        </div>
+                        <li class="nav-item">
+                            <a href="{{ path('inicio') }}" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('nosotros') }}" class="nav-link">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Productos <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('producto_erp') }}" class="nav-link">Semantica ERP</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'soporte'}) }}" class="nav-link">Soporte tecnico</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'consultoria'}) }}" class="nav-link">Consultoria</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'capacitacion'}) }}" class="nav-link">Capacitación</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'nube'}) }}" class="nav-link">Servicios nube</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'implementacion'}) }}" class="nav-link">Implementacion</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('servicio', {'servicio': 'medida'}) }}" class="nav-link">Desarrollo a la medida</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sectores <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('sector', {'sector': 'transporte'}) }}" class="nav-link">Transporte</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('sector', {'sector': 'vigilancia'}) }}" class="nav-link">Vigilancia</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('sector', {'sector': 'comercializacion'}) }}" class="nav-link">Comercializacion</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('contacto') }}" class="nav-link">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="other-option">
+                        <a class="default-btn nav-btn-1" href="{{ carbono_url ~ 'login' }}">Log In <span></span></a>
+                        <a class="default-btn" href="{{ carbono_url ~ 'soporte' }}">Soporte <span></span></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->

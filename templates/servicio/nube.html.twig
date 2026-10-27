@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Nube</h2>
+                        <ul>
+                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                            <li>Nube</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start Project Details Area -->
+    <section class="project-details-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="image-sliders owl-carousel owl-theme">
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-1.jpg') }}" alt="image">
+                        </div>
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-2.jpg') }}" alt="image">
+                        </div>
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-3.jpg') }}" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="projects-details-desc">
+                        <h3>Servicios de infraestructura nube</h3>
+                        <div class="features-text">
+                            <p>
+                                ¿Qué es una infraestructura de nube?
+                                La expresión infraestructura de nube se utiliza para describir aquellos elementos necesarios para el cloud computing, entre los que se incluyen el sistema de hardware, los recursos aislados, el almacenamiento y los recursos de red. Son las herramientas que se requieren para diseñar una nube. La infraestructura es necesaria para poder alojar los servicios y las aplicaciones en la nube.
+                            </p>
+                            <p>Con este servicio llegamos a nuestros clientes y brindamos un conjunto de soluciones de infraestructura garantizando la disponibilidad de uso:</p>
+                            <p>
+                                Hardware
+                                Si bien es común pensar que las nubes son totalmente virtuales, necesitan tener un sistema de hardware como parte de la infraestructura.
+                                Una red de nube consiste en varios sistemas de hardware físicos que pueden ubicarse en distintas regiones geográficas.
+                                El hardware incluye equipos de red, como conmutadores, enrutadores, firewalls y equilibradores de carga; matrices de almacenamiento; dispositivos para hacer copias de seguridad y servidores.
+                                La virtualización conecta los servidores, y divide y extrae los recursos para que los usuarios puedan acceder a ellos.
+                            </p>
+                            <p>
+                                Virtualización
+                                La virtualización es una tecnología que separa las funciones y los servicios de TI del sistema de hardware.
+                                Un software llamado hipervisor controla el hardware físico y extrae los recursos de la máquina, como la memoria, la potencia informática y el almacenamiento.
+                                Una vez que se asignan los recursos virtuales a grupos centralizados, se los considera nubes.
+                                Las nubes ofrecen ciertas ventajas, como el acceso de autoservicio, el ajuste automatizado de la infraestructura y el agrupamiento dinámico de los recursos.
+                            </p>
+                            <p>
+                                Almacenamiento
+                                Dentro de un centro de datos, estos se pueden almacenar en varios discos en una sola matriz de almacenamiento. La gestión del almacenamiento garantiza que se realicen copias de seguridad adecuadas de los datos, que se eliminen periódicamente las copias obsoletas y que se indexen los datos para poder recuperarlos en caso de que falle algún elemento del almacenamiento.
+                                Gracias a la virtualización, se extrae el espacio de almacenamiento de los sistemas de hardware, para que los usuarios puedan acceder a él en la nube.
+                                Cuando el almacenamiento se convierte en un recurso de la nube, se pueden agregar o eliminar unidades, utilizar el hardware para otro fin y responder a los cambios sin tener que agregar manualmente servidores de almacenamiento independientes para cada iniciativa nueva.
+                            </p>
+                            <p>
+                                Red
+                                Consta de cables, conmutadores, enrutadores y otros equipos físicos, a partir de los cuales se crean las redes virtuales.
+                                Una configuración tradicional de red en la nube consiste en varias redes secundarias, cada una con diferentes niveles de control. La nube permite crear redes de área local virtuales (VLAN) y asignar direcciones estáticas o dinámicas, según sea necesario, para todos los recursos de red.
+                                Los usuarios obtienen los recursos de la nube a través de una red, como el Internet o una Intranet, lo cual les permite acceder a las aplicaciones o a los servicios de la nube de forma remota, cuando lo soliciten.
+                            </p>
+
+                        </div>
+                        <div class="project-details-info">
+                            <div class="single-info-box">
+                                <h4>Author</h4>
+                                <span>Ervin Simmons</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Category</h4>
+                                <span>Design, Development</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Date</h4>
+                                <span>January 25, 2022</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Share</h4>
+                                <ul class="social">
+                                    <li>
+                                        <a href="#"> <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Works Link</h4>
+                                <a href="#" class="default-btn">Live Preview <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Project Details Area -->
+
+    <!-- Start Pricing Section -->
+    <section id="price" class="price-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 price-item">
+                    <div class="pricing-content">
+                        <div class="price-heading">
+                            <div class="price-name">
+                                <h3>Basico</h3>
+                                <span class="price-small-text">$</span>
+                                <h2>30</h2>
+                                <span class="price-small-text">/ por mes</span>
+                            </div>
+                        </div>
+                        <div class="price-btn"> <a href="#" class="default-btn">Contratar <span></span></a> </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check-circle"></i> 4 GB / 2 Intel CPUs</li>
+                                <li><i class="fa fa-check-circle"></i> 80 GB NVMe SSDs</li>
+                                <li><i class="fa fa-check-circle"></i> 4 TB transfer</li>
+                                <li class="offer-list-none"><i class="fa fa-times-circle"></i> <del>24/7 Soporte</del> </li>
+                                <li class="offer-list-none"><i class="fa fa-times-circle"></i> <del>Cancelacion gratuida</del> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 price-item">
+                    <div class="pricing-content">
+                        <div class="price-heading">
+                            <div class="price-name">
+                                <h3>Medio</h3>
+                                <span class="price-small-text">$</span>
+                                <h2>60</h2>
+                                <span class="price-small-text">/ por mes</span>
+                            </div>
+                        </div>
+                        <div class="price-btn"> <a href="#" class="default-btn">Get Started <span></span></a> </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check-circle"></i> 8 GB / 4 Intel CPUs</li>
+                                <li><i class="fa fa-check-circle"></i> 160 GB NVMe SSDs</li>
+                                <li><i class="fa fa-check-circle"></i> 5 TB transfer</li>
+                                <li><i class="fa fa-check-circle"></i> 5/8 Soporte</li>
+                                <li><i class="fa fa-check-circle"></i> Cancelacion gratuita</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 price-item">
+                    <div class="pricing-content">
+                        <div class="price-heading">
+                            <div class="price-name">
+                                <h3>Premium</h3>
+                                <span class="price-small-text">$</span>
+                                <h2>120</h2>
+                                <span class="price-small-text">/ por mes</span>
+                            </div>
+                        </div>
+                        <div class="price-btn"> <a href="#" class="default-btn">Get Started <span></span></a> </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check-circle"></i> 16 GB / 8 Intel CPUs</li>
+                                <li><i class="fa fa-check-circle"></i> 320 GB NVMe SSDs</li>
+                                <li><i class="fa fa-check-circle"></i> 6 TB transfer</li>
+                                <li><i class="fa fa-check-circle"></i> 5/8 Soporte</li>
+                                <li><i class="fa fa-check-circle"></i> Cancelacion gratuita</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing Section -->
+{% endblock %}

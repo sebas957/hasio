@@ -1,0 +1,210 @@
+{% extends 'base.html.twig' %}
+{% block title %}Soporte | Semantica{% endblock %}
+{% block content %}
+    {{ include('_cabecera.html.twig', {'titulo': 'Soporte y autogestión', 'descripcion': 'Cree casos, consulte su estado y encuentre recursos de autoayuda.', 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Soporte'}]}) }}
+
+    <!-- Tipos de caso -->
+    <section class="soporte-tipos section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Mesa de ayuda</span>
+                <h2>¿En qué podemos ayudarle?</h2>
+                <p>Elija el tipo de solicitud y cuéntenos los detalles. Le asignamos un número de caso para que pueda
+                    seguir su estado.</p>
+            </div>
+            <div class="row">
+                {% for codigo, tipo in tipos %}
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a class="soporte-tipo" href="{{ path('soporte_nuevo', {'tipo': codigo}) }}">
+                            <span class="soporte-tipo-icono"><i class="fas {{ tipo.icono }}"></i></span>
+                            <h3>{{ tipo.nombre }}</h3>
+                            <p>{{ tipo.descripcion }}</p>
+                            <span class="soporte-tipo-accion">Crear caso <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulta de casos -->
+    <section class="soporte-consulta bg-grey section-padding" id="consulta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="soporte-caja">
+                        <span class="seccion-etiqueta">Seguimiento</span>
+                        <h2>Consulte el estado de su caso</h2>
+                        <p>Escriba el número de caso y el correo con el que lo creó.</p>
+                        {{ form_start(form, { 'action': path('soporte') ~ '#consulta', 'attr': {'class': 'soporte-consulta-form'} }) }}
+                        {% if form.vars.errors|length %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for error in form.vars.errors %}{{ error.message }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+                            </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    {{ form_label(form.codigo, 'Número de caso') }}
+                                    {{ form_widget(form.codigo, { 'attr': {'placeholder': 'Ej. 12345', 'inputmode': 'numeric', 'min': 1} }) }}
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    {{ form_label(form.correo, 'Correo electrónico') }}
+                                    {{ form_widget(form.correo, { 'attr': {'placeholder': 'nombre@empresa.com', 'autocomplete': 'email'} }) }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_widget(form.consultar, { 'attr': {'class': 'default-btn'} }) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <ul class="contacto-datos soporte-canales">
+                        <li>
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <h3>Horario de atención</h3>
+                                <p>Lunes a viernes<br>8:00 a 12:00 y 13:00 a 17:00</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Correo</h3>
+                                <p>
+                                    <a href="mailto:soporte@semantica.com.co">soporte@semantica.com.co</a><br>
+                                    <a href="mailto:implementacion@semantica.com.co">implementacion@semantica.com.co</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p><a href="tel:+573125829803">+57 312 5829803</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {% if caso %}
+                {% if caso.cerrado %}
+                    {% set estado = {'clase': 'cerrado', 'texto': 'Cerrado', 'fecha': caso.fechaCerrado} %}
+                {% elseif caso.atendido %}
+                    {% set estado = {'clase': 'atendido', 'texto': 'Atendido', 'fecha': caso.fechaAtendido} %}
+                {% else %}
+                    {% set estado = {'clase': 'pendiente', 'texto': 'En espera de atención', 'fecha': null} %}
+                {% endif %}
+                <article class="soporte-caso">
+                    <header class="soporte-caso-encabezado">
+                        <div>
+                            <span class="seccion-etiqueta">Caso #{{ caso.id }}</span>
+                            <h3>{{ caso.tipo|default('Soporte')|capitalize }}{% if caso.modulo %} · {{ caso.modulo }}{% endif %}</h3>
+                            <p>Creado el {{ caso.fecha|date('d/m/Y \\a \\l\\a\\s H:i') }} por {{ caso.contacto }}</p>
+                        </div>
+                        <span class="soporte-estado soporte-estado-{{ estado.clase }}">
+                            {{ estado.texto }}{% if estado.fecha %} · {{ estado.fecha|date('d/m/Y') }}{% endif %}
+                        </span>
+                    </header>
+                    <div class="soporte-caso-descripcion">
+                        <h4>Descripción</h4>
+                        <p>{{ caso.descripcion|nl2br }}</p>
+                    </div>
+                    <h4>Respuestas</h4>
+                    {% if caso.respuestas is empty %}
+                        <p class="soporte-sin-respuestas">Todavía no hay respuestas. Un asesor se comunicará con usted
+                            por alguno de los medios que nos dejó.</p>
+                    {% else %}
+                        <ol class="soporte-respuestas">
+                            {% for respuesta in caso.respuestas %}
+                                <li class="{{ respuesta.cliente ? 'es-cliente' : 'es-asesor' }}">
+                                    <div class="soporte-respuesta-meta">
+                                        <strong>{{ respuesta.autor|default(respuesta.cliente ? 'Usted' : 'Equipo Semantica') }}</strong>
+                                        <span>{{ respuesta.fecha|date('d/m/Y H:i') }}</span>
+                                    </div>
+                                    <p>{{ respuesta.comentario|nl2br }}</p>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                </article>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Recursos de autoayuda -->
+    <section class="soporte-recursos section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Autogestión</span>
+                <h2>Recursos de autoayuda</h2>
+                <p>Encuentre respuestas por su cuenta a cualquier hora. Si necesita atención personalizada, cree un caso.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <a class="soporte-recurso" href="https://documentacion.semanticaerp.com/" target="_blank" rel="noopener">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Manuales y documentación</h3>
+                        <p>Guías paso a paso de cada módulo y proceso del ERP.</p>
+                        <span class="soporte-tipo-accion">Abrir documentación <i class="fas fa-external-link-alt"></i></span>
+                    </a>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <a class="soporte-recurso" href="https://www.youtube.com/channel/UCk2FSMxqxz3Y6fkyKT_ef3w" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i>
+                        <h3>Canal de YouTube</h3>
+                        <p>Videos instructivos para resolver las tareas más frecuentes.</p>
+                        <span class="soporte-tipo-accion">Ver videos <i class="fas fa-external-link-alt"></i></span>
+                    </a>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <a class="soporte-recurso" href="{{ path('soporte_descarga') }}">
+                        <i class="fas fa-download"></i>
+                        <h3>Descargas</h3>
+                        <p>Aplicaciones de escritorio y recursos para los componentes.</p>
+                        <span class="soporte-tipo-accion">Ir a descargas <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="soporte-faq bg-grey section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span class="seccion-etiqueta">Preguntas frecuentes</span>
+                <h2>Respuestas rápidas</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <details class="soporte-pregunta" open>
+                        <summary>¿Cómo ingreso a Semantica ERP?</summary>
+                        <p>Escriba en su navegador la dirección <strong>nombreempresa.semantica.com.co</strong>. En
+                            “Username” registre su nombre o número de usuario, según como se haya creado en el sistema;
+                            en “Password” la contraseña del usuario, y haga clic en “Inicio seguro”.</p>
+                    </details>
+                    <details class="soporte-pregunta">
+                        <summary>¿Cómo creo una programación de nómina?</summary>
+                        <p>Ingrese al ERP y vaya a <strong>Recurso humano / Movimiento / Nómina / Programación</strong>.
+                            Haga clic en “Nuevo” y diligencie la información (el botón de ayuda explica cada campo y
+                            tiene un video instructivo). Al guardar, la aplicación lo lleva al detalle: use “Cargar
+                            contratos” si la nómina es del grupo administrativo o “Cargar soporte” si es del grupo
+                            operativo.</p>
+                        <p>Luego haga clic en “Autorizar” para calcular los valores a pagar. Si corrige algo, debe
+                            “Desautorizar” y “Autorizar” de nuevo para que tome los cambios. Cuando todo esté correcto,
+                            haga clic en “Aprobar”.</p>
+                    </details>
+                    <details class="soporte-pregunta">
+                        <summary>¿Cómo genero un informe de pagos de nómina?</summary>
+                        <p>Vaya a <strong>Recurso humano / Informe / Nómina / Pago detalle</strong>, aplique los filtros
+                            que necesite y exporte la información en Excel o PDF.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

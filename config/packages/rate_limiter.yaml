@@ -1,0 +1,9 @@
+framework:
+    rate_limiter:
+        # Envios de los formularios publicos (contacto, inscripcion a eventos)
+        # por IP. Se inyecta como RateLimiterFactoryInterface $formularioPublicoLimiter.
+        # Los contadores quedan en la cache de la app (var/cache).
+        formulario_publico:
+            policy: sliding_window
+            limit: 5
+            interval: '15 minutes'

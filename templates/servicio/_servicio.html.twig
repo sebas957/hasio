@@ -1,0 +1,77 @@
+{# Estructura comun de las paginas de servicio. Cada pagina define servicio_clave, servicio_titulo, servicio_resumen y servicio_contenido #}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {% set clave = block('servicio_clave')|trim %}
+    {% set servicios = {
+        'soporte': {'nombre': 'Soporte técnico', 'icono': 'fa-headset'},
+        'consultoria': {'nombre': 'Consultoría', 'icono': 'fa-chart-line'},
+        'capacitacion': {'nombre': 'Capacitación', 'icono': 'fa-chalkboard-teacher'},
+        'nube': {'nombre': 'Servicios nube', 'icono': 'fa-cloud'},
+        'implementacion': {'nombre': 'Implementación', 'icono': 'fa-rocket'},
+        'medida': {'nombre': 'Desarrollo a la medida', 'icono': 'fa-code'},
+    } %}
+    {% set actual = servicios[clave] %}
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>{{ actual.nombre }}</h2>
+                        <ul>
+                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                            <li><a href="{{ path('inicio') }}#servicios">Servicios</a></li>
+                            <li>{{ actual.nombre }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <section class="servicio-detalle section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="servicio-encabezado">
+                        <span class="servicio-icono"><i class="fas {{ actual.icono }}"></i></span>
+                        <div>
+                            <span class="seccion-etiqueta">Servicio</span>
+                            <h2>{% block servicio_titulo %}{% endblock %}</h2>
+                        </div>
+                    </div>
+                    <p class="servicio-resumen">{% block servicio_resumen %}{% endblock %}</p>
+                    {% block servicio_contenido %}{% endblock %}
+                </div>
+                <div class="col-lg-4">
+                    <aside class="servicio-lateral">
+                        <div class="servicio-lateral-caja">
+                            <h3>Servicios</h3>
+                            <ul class="servicio-otros">
+                                {% for id, servicio in servicios %}
+                                    <li>
+                                        <a href="{{ path('servicio', {'servicio': id}) }}"
+                                           {% if id == clave %}class="activo" aria-current="page"{% endif %}>
+                                            <i class="fas {{ servicio.icono }}"></i> {{ servicio.nombre }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="servicio-lateral-caja servicio-contacto">
+                            <h3>¿Necesita este servicio?</h3>
+                            <p>Cuéntenos sobre su empresa y le proponemos la mejor forma de acompañarla.</p>
+                            <a class="default-btn-one" href="{{ path('contacto') }}">Contáctenos <span></span></a>
+                            <a class="servicio-telefono" href="tel:+573125829803"><i class="fas fa-phone"></i> +57 312 5829803</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% block servicio_extra %}{% endblock %}
+{% endblock %}

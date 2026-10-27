@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ tipo.nombre }} | Soporte Semantica{% endblock %}
+{% block content %}
+    {{ include('_cabecera.html.twig', {'titulo': 'Nuevo caso', 'descripcion': tipo.nombre, 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Soporte', 'url': path('soporte')}, {'texto': 'Nuevo caso'}]}) }}
+
+    <section class="contacto-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="servicio-encabezado">
+                        <span class="servicio-icono"><i class="fas {{ tipo.icono }}"></i></span>
+                        <div>
+                            <span class="seccion-etiqueta">Nuevo caso</span>
+                            <h2>{{ tipo.nombre }}</h2>
+                        </div>
+                    </div>
+                    <p>{{ tipo.descripcion }}</p>
+                    <div class="soporte-consejos">
+                        <h3><i class="far fa-lightbulb"></i> Para atenderle más rápido</h3>
+                        <ul>
+                            <li>Indique la ruta del menú donde ocurre.</li>
+                            <li>Describa los pasos que siguió y lo que esperaba que pasara.</li>
+                            <li>Adjunte capturas de pantalla o los archivos relacionados.</li>
+                        </ul>
+                    </div>
+                    <ul class="contacto-datos">
+                        <li>
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <h3>Horario de atención</h3>
+                                <p>Lunes a viernes<br>8:00 a 12:00 y 13:00 a 17:00</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Correo</h3>
+                                <p><a href="mailto:soporte@semantica.com.co">soporte@semantica.com.co</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-8">
+                    <div class="contacto-formulario">
+                        {% if form is null %}
+                            <div class="alert alert-warning" role="alert">
+                                En este momento no podemos recibir casos desde el sitio. Escríbanos a
+                                <a href="mailto:soporte@semantica.com.co">soporte@semantica.com.co</a> o llámenos al
+                                <a href="tel:+573125829803">+57 312 5829803</a> y con gusto le ayudamos.
+                            </div>
+                            <a href="{{ path('soporte') }}" class="default-btn-one">Volver a soporte <span></span></a>
+                        {% else %}
+                            {{ include('_avisos.html.twig') }}
+                            {{ form_start(form, { 'attr': {'id': 'form_soporte'} }) }}
+                            {% if form.vars.errors|length %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for error in form.vars.errors %}{{ error.message }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.contacto, 'Nombre completo') }}
+                                        {{ form_widget(form.contacto, { 'attr': {'placeholder': 'Ej. Ana Gómez', 'autocomplete': 'name', 'maxlength': 200} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.cliente, 'Empresa') }}
+                                        {{ form_widget(form.cliente, { 'attr': {'placeholder': 'Empresa cliente de Semantica', 'autocomplete': 'organization', 'maxlength': 200} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.correo, 'Correo electrónico') }}
+                                        {{ form_widget(form.correo, { 'attr': {'placeholder': 'nombre@empresa.com', 'autocomplete': 'email', 'maxlength': 200} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.telefono, 'Teléfono') }}
+                                        {{ form_widget(form.telefono, { 'attr': {'placeholder': '+57 300 000 0000', 'autocomplete': 'tel', 'inputmode': 'tel', 'maxlength': 100} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_label(form.modulo, 'Módulo') }}
+                                        {{ form_widget(form.modulo) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_label(form.descripcion, 'Describa su solicitud') }}
+                                        {{ form_widget(form.descripcion, { 'attr': {'placeholder': '¿Qué estaba haciendo, qué ocurrió y qué esperaba que pasara?', 'rows': 7, 'maxlength': 5000} }) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_label(form.archivos, 'Adjuntos (opcional)') }}
+                                        {{ form_widget(form.archivos, { 'attr': {'placeholder': 'Seleccione los archivos'} }) }}
+                                        <small class="form-text text-muted">Hasta 5 archivos de máximo 10 MB cada uno.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacto-enviar">
+                                <p class="contacto-privacidad">
+                                    Al enviar este formulario acepta nuestra
+                                    <a href="{{ path('soporte_politicas_privacidad') }}">política de privacidad</a>.
+                                </p>
+                                <div class="soporte-botones">
+                                    <a href="{{ path('soporte') }}" class="soporte-volver">Cancelar</a>
+                                    {{ form_widget(form.guardar, { 'attr': {'class': 'default-btn'} }) }}
+                                </div>
+                            </div>
+                            <input type="hidden" name="recaptcha_token">
+                            {{ form_end(form) }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascriptsPersonales %}
+    {% if form is not null %}
+        {{ include('_recaptcha.html.twig', {'formulario': 'form_soporte', 'accion': 'soporte'}) }}
+        <script>
+            // Muestra los nombres de los archivos elegidos en el campo de adjuntos
+            document.querySelectorAll('#form_soporte .custom-file-input').forEach(function (campo) {
+                campo.addEventListener('change', function () {
+                    var nombres = Array.prototype.map.call(campo.files, function (archivo) { return archivo.name; });
+                    var etiqueta = campo.parentNode.querySelector('.custom-file-label');
+                    if (etiqueta && nombres.length) {
+                        etiqueta.textContent = nombres.join(', ');
+                    }
+                });
+            });
+            // Evita dobles envios mientras se obtiene el token y se suben los adjuntos
+            document.getElementById('form_soporte').addEventListener('submit', function (evento) {
+                var boton = evento.submitter;
+                if (boton) {
+                    boton.classList.add('enviando');
+                    boton.textContent = 'Enviando…';
+                }
+            });
+        </script>
+    {% endif %}
+{% endblock %}

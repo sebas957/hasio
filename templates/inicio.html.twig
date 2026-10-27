@@ -1,0 +1,525 @@
+{% extends 'base_claro.html.twig' %}
+{% block content %}
+    <!-- Start Home Area -->
+    <div class="home-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="main-banner-content">
+                                <h1>Administre su empresa con nuestras <span
+                                            class="color-text">Soluciones nube</span>
+                                </h1>
+                                <p>Nuestra suite de servicios y productos integrados conecta todos los departamentos de una organización
+                                    y afecta a todas las áreas para ayudar a aumentar los ingresos, controlar los gastos,
+                                    mejorar la toma de decisiones y transformar los datos en información útil
+                                </p>
+                                <div class="banner-btn">
+                                    <a href="{{ path('nosotros') }}" class="default-btn-one">
+                                        Leer mas
+                                        <span></span>
+                                    </a>
+                                    <a class="default-btn" href="{{ path('contacto') }}">
+                                        Contactenos
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="banner-image">
+                                <img src="{{ asset('landingPage/img/home-font.png') }}" alt="logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grey-cr"></div>
+    </div>
+    <!-- End Home Area -->
+
+    <!-- Start Services Section -->
+    <section class="services-section pt-70 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="pe-7s-tools"></i>
+                        </div>
+                        <h3>Servicios nube</h3>
+                        <p>Garantice el éxito y optimo funcionamiento de sus aplicaciones con nuestras soluciones de infraestructura.</p>
+                        <div class="services-btn-link">
+                            <a href="{{ path('servicio', {'servicio': 'nube'}) }}" class="services-link">Leer mas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="pe-7s-display1"></i>
+                        </div>
+                        <h3>Soporte tecnico</h3>
+                        <p>Un equipo de profesionales preparados para guiarlo en el uso de nuestros productos y servicios</p>
+                        <div class="services-btn-link">
+                            <a href="{{ path('servicio', {'servicio': 'soporte'}) }}" class="services-link">Leer mas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="pe-7s-share"></i>
+                        </div>
+                        <h3>Consultoria</h3>
+                        <p>Encuentre las fortalezas de su compañía y conviértalas en ventajas competitivas alineadas a su sector</p>
+                        <div class="services-btn-link">
+                            <a href="{{ path('servicio', {'servicio': 'consultoria'}) }}" class="services-link">Leer mas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+    <!-- Start Overview Section -->
+    <section class="overview-section bg-grey section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="overview-content">
+                        <h2>Semantica ERP</h2>
+                        <p>Con el software Semantica ERP, centralice todas las áreas y
+                            procesos de su compañía, generando información sólida que le permita
+                            tomar decisiones acertadas y alineadas con su negocio.</p>
+                        <ul class="features-list">
+                            <li><span class="active">Finanzas</span></li>
+                            <li><span>Compras & Tesoreria</span></li>
+                            <li><span>Ventas & Cartera</span></li>
+                            <li><span>Recurso humano</span></li>
+                            <li><span>Inventario</span></li>
+                            <li><span>CRM</span></li>
+                            <li><span>Programacion turnos</span></li>
+                            <li><span>Logistica & Transporte</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="overview-image-2">
+                        <img src="{{ asset('landingPage/img/choose-1.png') }}" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Overview Section -->
+
+    <!-- Start Overview Section -->
+    <section class="overview-section section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="overview-image">
+                        <img src="{{ asset('landingPage/img/choose-2.png') }}" alt="logo">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="overview-content">
+                        <h2>Nuestros aliados Semántica</h2>
+                        <p>En Semantica contamos con colaboradores de primer nivel,
+                            compañías expertas en sectores específicos que enriquecen nuestras soluciones y la calidad de nuestros
+                            productos y servicios...</p>
+                        <ul class="features-list">
+                            <li><span class="active">Esetech Solutions</span></li>
+                            <li><span>Digital Ocean</span></li>
+                            <li><span>AWS</span></li>
+                            <li><span>Azure</span></li>
+                            <li><span>ABC Contable y Juridico</span></li>
+                            <li><span>Laboratorio Juridico</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Overview Section -->
+
+    <!-- Start Counter Section -->
+    <section class="counter-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 counter-item">
+                    <div class="single-counter">
+                        <div class="counter-contents">
+                            <h2>
+                                <span class="counter-number">5</span>
+                                <span>+</span>
+                            </h2>
+                            <h3 class="counter-heading">Años de experiencia</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 counter-item">
+                    <div class="single-counter">
+                        <div class="counter-contents">
+                            <h2>
+                                <span class="counter-number">45</span>
+                            </h2>
+                            <h3 class="counter-heading">Implementaciones exitosas</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 counter-item">
+                    <div class="single-counter">
+                        <div class="counter-contents">
+                            <h2>
+                                <span class="counter-number">3500</span>
+                                <span>+</span>
+                            </h2>
+                            <h3 class="counter-heading">Soportes</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 counter-item">
+                    <div class="single-counter">
+                        <div class="counter-contents">
+                            <h2>
+                                <span class="counter-number">1300</span>
+                                <span>+</span>
+                            </h2>
+                            <h3 class="counter-heading">Casos desarrollo</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Counter Section -->
+
+    <!-- Start Team Section -->
+    <section class="team-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2>Miembros del equipo</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{{ asset('landingPage/img/team/team-1.jpg') }}" alt="logo">
+                            <div class="team-social-icon">
+                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mario Estrada</h3>
+                            <span>CEO Investigador</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{{ asset('landingPage/img/team/team-2.jpg') }}" alt="logo">
+                            <div class="team-social-icon">
+                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Sebastian Orozco</h3>
+                            <span>Lider Facilitador</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{{ asset('landingPage/img/team/team-3.jpg') }}" alt="logo">
+                            <div class="team-social-icon">
+                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Johana Castaño</h3>
+                            <span>Gestion Administrativa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{{ asset('landingPage/img/team/team-4.jpg') }}" alt="logo">
+                            <div class="team-social-icon">
+                                <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Andres Cano</h3>
+                            <span>Desarrollador Apps - Front</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Team Section -->
+
+    <!-- Start Testimonial Section -->
+    <section class="testimonial-section bg-grey section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros clientes dicen</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="testimonial-slider owl-carousel owl-theme">
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="rating-box">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>En Semántica hemos encontrado un aliado estratégico ajustado a nuestras necesidades,
+                                    atiende las solicitudes y brinda soluciones oportunamente.
+                                    En Coordinar Seguridad nos sentimos respaldados para dar tranquilidad a
+                                    nuestros clientes y continuar avanzando en la transformación digital.</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="{{ asset('landingPage/img/client/JhonFCastano.png') }}"
+                                     alt="testimonial images">
+                            </div>
+                            <div class="testimonial-bio">
+                                <div class="bio-info">
+                                    <h3>Jhon F. Castaño</h3>
+                                    <span>Gerente, Coordinar Seguridad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="rating-box">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>Con la implentacion de Semántica hemos incrementado el control de nuestros procesos
+                                    y logrado el control y cálculo de los costos ocultos. Hoy podemos ofrecer trazabilidad
+                                    de la informacion en el tiempo y garantia de los datos en un proceso de mejora continua.</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="{{ asset('landingPage/img/client/JavierBerrio.jpg') }}"
+                                     alt="testimonial images">
+                            </div>
+                            <div class="testimonial-bio">
+                                <div class="bio-info">
+                                    <h3>Javier H. Berrio de Pombo</h3>
+                                    <span>Gerente General, Grupo Vimarco</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="rating-box">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>Semántica Digital es garantía de tranquilidad y respaldo en todos nuestros procesos corporativos,
+                                    nos han acompañado como aliados desde casi el nacimiento de la empresa, superaron nuestras expectativas
+                                    en cada una de nuestras necesidades y requerimientos.</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="{{ asset('landingPage/img/client/AndresMontoya.jpeg') }}"
+                                     alt="testimonial images">
+                            </div>
+                            <div class="testimonial-bio">
+                                <div class="bio-info">
+                                    <h3>Andrés Montoya</h3>
+                                    <span>Gerente General, Energy Logistica</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="rating-box">
+                                <ul>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>Encontrar un respaldo tecnológico que apoye los procesos de
+                                    ejecución y control es de vital importancia. Con Semántica,
+                                    tenemos la garantía de una mejora y eficiencia continua en nuestros procesos,
+                                    aplicativos de fácil manejo, seguridad en la información y herramientas
+                                    actualizadas.</p>
+                            </div>
+                            <div class="avatar">
+                                <img src="{{ asset('landingPage/img/client/DianaZapata.png') }}"
+                                     alt="testimonial images">
+                            </div>
+                            <div class="testimonial-bio">
+                                <div class="bio-info">
+                                    <h3>Diana Zapata</h3>
+                                    <span>Gerente Administrativa, Invivo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonial Section -->
+
+    <!-- Start Hire Section -->
+    <section class="hire-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12">
+                    <div class="hire-content">
+                        <h2>Que proyecto tienes en mente hoy?</h2>
+                        <p>Desde nuestra fabrica de soluciones, atendemos de forma integral todos sus proyectos de tecnologia:
+                            nube, infraestructura, desarrollo a la medida, app moviles, bases de datos</p>
+                        <div class="hire-btn">
+                            <a class="default-btn-one" href="{{ path('contacto') }}">Contactenos <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hire Section -->
+
+    <!-- Start Partner Logo Section -->
+    <div class="partner-area bg-white">
+        <div class="container">
+            <div id="partner-carousel" class="partner-carousel owl-carousel owl-theme owl-loaded">
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC1.jpg') }}"  alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC2.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC3.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC4.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC5.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC6.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC7.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC8.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC9.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC10.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC11.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC12.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC13.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC14.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC15.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC16.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC17.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+                <div class="partner-slide-item">
+                    <a href="#0">
+                        <img src="{{ asset('landingPage/img/partner-logo/IC18.jpg') }}" alt="partner-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Partner Logo Section -->
+
+{% endblock %}

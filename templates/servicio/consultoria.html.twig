@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <!-- Start Page Title Area -->
+    <div class="page-title-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Consultoria</h2>
+                        <ul>
+                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                            <li>Consultoria</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start Project Details Area -->
+    <section class="project-details-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="image-sliders owl-carousel owl-theme">
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-1.jpg') }}" alt="image">
+                        </div>
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-2.jpg') }}" alt="image">
+                        </div>
+                        <div class="project-details-image">
+                            <img src="{{ asset('landingPage/img/project-details/project-details-3.jpg') }}" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="projects-details-desc">
+                        <h3>Consultoria Especializada</h3>
+                        <div class="features-text">
+                            <p>Dentro de los procesos técnicos de nuestro sistema existen algunos de mayor complejidad que deben ser atendidos por un especialista: distribuciones o compensaciones de nómina generada por turnos, costos avanzados, programación de turnos,  intermediación de servicios de transporte, entre otros. Este servicio tiene como objetivo orientar a nuestros clientes que están atravesando algún tipo de problema específico, normativo o de procesos avanzados.
+                                En las implementaciones se asignan dentro del paquete, consultorías especializadas o pueden ser contratadas según la necesidad.
+                            </p>
+                        </div>
+                        <div class="project-details-info">
+                            <div class="single-info-box">
+                                <h4>Author</h4>
+                                <span>Ervin Simmons</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Category</h4>
+                                <span>Design, Development</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Date</h4>
+                                <span>January 25, 2022</span>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Share</h4>
+                                <ul class="social">
+                                    <li>
+                                        <a href="#"> <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-info-box">
+                                <h4>Works Link</h4>
+                                <a href="#" class="default-btn">Live Preview <span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Project Details Area -->
+{% endblock %}

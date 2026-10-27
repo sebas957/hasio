@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% block metas %}
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Semantica{% endblock %}</title>
+        <meta name="description" content="Semantica Digital: ERP, soporte, consultoria e infraestructura para su empresa.">
+    {% endblock %}
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('imagenes/favicon.ico') }}" type="image/x-icon">
+    <!-- Bootstrap Min CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/bootstrap.min.css') }}">
+    <!-- Animate Min CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/animate.min.css') }}">
+    <!-- Pe-icon-7 CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/pe-icon-7-stroke.css') }}">
+    <!-- Font Awesome Min CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/fontawesome.min.css') }}">
+    <!-- Mran Menu CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/meanmenu.css') }}">
+    <!-- Owl Carousel Min CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/owl.carousel.min.css') }}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('landingPage/css/responsive.css') }}">
+
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+    <!-- Start Preloader Area -->
+    <div class="preloader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    {# base_claro.html.twig lo sobrescribe para las paginas con cabecera clara #}
+    {% block menu %}
+        {{ include('base/menu.html.twig', {'oscuro': true}) }}
+    {% endblock %}
+    {% block content %}
+
+    {% endblock %}
+    {{ include('base/pie.html.twig') }}
+
+    <!-- Start Go Top Section -->
+    <div class="go-top">
+        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <!-- End Go Top Section -->
+
+{% endblock %}
+
+<!-- jQuery Min JS -->
+<script src="{{ asset('landingPage/js/jquery.min.js') }}"></script>
+<!-- Bootstrap Min JS -->
+<script src="{{ asset('landingPage/js/bootstrap.min.js') }}"></script>
+<!-- MeanMenu JS  -->
+<script src="{{ asset('landingPage/js/jquery.meanmenu.js') }}"></script>
+<!-- Appear Min JS -->
+<script src="{{ asset('landingPage/js/jquery.appear.min.js') }}"></script>
+<!-- CounterUp Min JS -->
+<script src="{{ asset('landingPage/js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('landingPage/js/jquery.counterup.min.js') }}"></script>
+<!-- Owl Carousel Min JS -->
+<script src="{{ asset('landingPage/js/owl.carousel.min.js') }}"></script>
+<!-- WOW Min JS -->
+<script src="{{ asset('landingPage/js/wow.min.js') }}"></script>
+<!-- Main JS -->
+<script src="{{ asset('landingPage/js/main.js') }}"></script>
+
+{% block javascriptsPersonales %}{% endblock %}
+
+</body>
+
+</html>

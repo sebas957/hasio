@@ -1,0 +1,8 @@
+{# Mensajes flash pendientes (addFlash en los controladores). Leer app.flashes
+   los vacia. El tipo es la clase de alerta de Bootstrap: success, danger,
+   warning o info. #}
+{% for tipo, mensajes in app.flashes %}
+    {% for mensaje in mensajes %}
+        <div class="alert alert-{{ tipo }}" role="alert">{{ mensaje }}</div>
+    {% endfor %}
+{% endfor %}

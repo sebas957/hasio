@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %}Descargas | Soporte Semantica{% endblock %}
+{% block content %}
+    {{ include('_cabecera.html.twig', {'titulo': 'Descargas', 'descripcion': 'Aplicaciones y recursos para trabajar con Semantica.', 'migas': [{'texto': 'Inicio', 'url': path('inicio')}, {'texto': 'Soporte', 'url': path('soporte')}, {'texto': 'Descargas'}]}) }}
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="soporte-descarga">
+                        <div class="servicio-encabezado">
+                            <span class="servicio-icono"><i class="fab fa-windows"></i></span>
+                            <div>
+                                <span class="seccion-etiqueta">Aplicación de escritorio</span>
+                                <h2>Cromo para Windows</h2>
+                            </div>
+                        </div>
+                        <p class="servicio-resumen">Aplicación de escritorio para crear e imprimir guías, clientes y
+                            destinatarios, conectada a Semantica.</p>
+                        <div class="soporte-descarga-accion">
+                            <a class="default-btn" href="https://cdn-semantica.tor1.digitaloceanspaces.com/cromo/descargas/Cromo-win-Setup.exe">
+                                <i class="fas fa-download"></i> Descargar Cromo <span></span>
+                            </a>
+                            <span class="soporte-descarga-version">Versión <strong id="version-cromo">más reciente</strong> · Windows 10 y 11</span>
+                        </div>
+                        <ul class="soporte-lista">
+                            <li><i class="fas fa-check"></i> Se instala en un minuto y no requiere permisos de administrador.</li>
+                            <li><i class="fas fa-check"></i> Se actualiza sola cada vez que se abre.</li>
+                            <li><i class="fas fa-check"></i> Necesita un usuario de Semantica para ingresar.</li>
+                        </ul>
+                        <div class="soporte-consejos">
+                            <h3><i class="fas fa-shield-alt"></i> Si Windows muestra “Windows protegió su PC”</h3>
+                            <p>Haga clic en <strong>Más información</strong> y luego en <strong>Ejecutar de todas formas</strong>.</p>
+                        </div>
+                        <p><a href="https://github.com/wariox3/cromo_windows/releases" target="_blank" rel="noopener">Ver las novedades de cada versión <i class="fas fa-external-link-alt"></i></a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <aside class="servicio-lateral">
+                        <div class="servicio-lateral-caja">
+                            <h3>Otros recursos</h3>
+                            <ul class="servicio-otros">
+                                <li><a href="https://github.com/wariox3/francio/tree/main/publico" target="_blank" rel="noopener"><i class="fas fa-tags"></i> Rótulos</a></li>
+                                <li><a href="https://documentacion.semanticaerp.com/" target="_blank" rel="noopener"><i class="fas fa-book-open"></i> Documentación</a></li>
+                            </ul>
+                        </div>
+                        <div class="servicio-lateral-caja servicio-contacto">
+                            <h3>¿Problemas con la instalación?</h3>
+                            <p>Cree un caso y nuestro equipo le ayudará.</p>
+                            <a class="default-btn-one" href="{{ path('soporte_nuevo', {'tipo': 'SOP'}) }}">Crear caso <span></span></a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascriptsPersonales %}
+    <script>
+        // Versión publicada: se lee del último release de Cromo en GitHub
+        fetch("https://api.github.com/repos/wariox3/cromo_windows/releases/latest")
+            .then(function (r) { return r.json(); })
+            .then(function (r) {
+                if (r.tag_name) document.getElementById("version-cromo").textContent = r.tag_name.replace(/^v/, "");
+            })
+            .catch(function () {});
+    </script>
+{% endblock %}

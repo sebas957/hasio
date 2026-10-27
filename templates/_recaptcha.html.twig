@@ -1,0 +1,26 @@
+{#
+    reCAPTCHA v3 para los formularios publicos. El token se pide al enviar y no
+    al cargar la pagina, porque caduca a los dos minutos y el usuario puede
+    tardar mas llenando el formulario.
+    Uso: {{ include('_recaptcha.html.twig', {'formulario': 'form_contacto', 'accion': 'contacto'}) }}
+    El formulario necesita el campo oculto recaptcha_token y la accion debe ser
+    la misma que valida el controlador (Recaptcha::validar()).
+#}
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+<script>
+    document.getElementById('{{ formulario }}').addEventListener('submit', function (evento) {
+        var formulario = this;
+        if (formulario.dataset.recaptchaListo) {
+            return;
+        }
+        evento.preventDefault();
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ recaptcha_site_key }}', {action: '{{ accion }}'}).then(function (token) {
+                formulario.querySelector('[name="recaptcha_token"]').value = token;
+                formulario.dataset.recaptchaListo = '1';
+                // Con el boton que lo envio: Symfony lo necesita para isClicked()
+                formulario.requestSubmit(evento.submitter);
+            });
+        });
+    });
+</script>

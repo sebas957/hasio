@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .contact-form-3 {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form-3 .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form-3 .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form-3 .form-control:focus {
+            border-color: #667eea;
+            box-shadow: none;
+        }
+
+        .contact-information-box-3 {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .single-contact-info-box {
+            margin-bottom: 20px;
+        }
+
+        .single-contact-info-box:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <!-- Start Page Title Area -->
+    <div class="page-title-area item-bg2">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="page-title-content">
+                        <h2>Registro al Evento</h2>
+                        <ul>
+                            <li><a href="{{ path('inicio') }}">Inicio</a></li>
+                            <li>{{ evento.nombre|default('Nueva versión Semántica - RedDoc') }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+    <!-- Start Evento Section -->
+    <div class="contact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <!-- Información de Contacto -->
+                    <div class="contact-information-box-3">
+                        <div class="single-contact-info-box">
+                            <div class="contact-info">
+                                <h6>Dirección:</h6>
+                                <p>Cll 34 Nro 66 A 33 Ofc 201, Conquistadores</p>
+                                <p>Medellín, Antioquia - Colombia</p>
+                            </div>
+                            <div class="contact-info-bg-icon">
+                                <i class="pe-7s-map-marker"></i>
+                            </div>
+                        </div>
+                        <div class="single-contact-info-box">
+                            <div class="contact-info">
+                                <h6>Teléfono</h6>
+                                <p>+57 312 5829803</p>
+                            </div>
+                            <div class="contact-info-bg-icon">
+                                <i class="pe-7s-call"></i>
+                            </div>
+                        </div>
+                        <div class="single-contact-info-box">
+                            <div class="contact-info">
+                                <h6>Correo:</h6>
+                                <p>administracion@semantica.com.co</p>
+                                <p>investigacion@semantica.com.co</p>
+                            </div>
+                            <div class="contact-info-bg-icon">
+                                <i class="pe-7s-mail"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-12">
+                    <div class="contact-form contact-form-3">
+                        <h3>Formulario de Registro</h3>
+                        <p class="text-muted">Complete sus datos para registrarse al evento</p>
+
+                        <p class="form-message"></p>
+                        {{ include('_avisos.html.twig') }}
+                        {{ form_start(form, { 'attr': {'class': 'form', 'id': "form_evento"} }) }}
+                        {{ form_errors(form) }}
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Nombre completo *</label>
+                                    {{ form_widget(form.nombre, { 'attr': {'class': 'form-control', 'placeholder': 'Ingrese su nombre completo'} }) }}
+                                    {{ form_errors(form.nombre) }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Correo electrónico *</label>
+                                    {{ form_widget(form.correo, { 'attr': {'class': 'form-control', 'placeholder': 'correo@ejemplo.com'} }) }}
+                                    {{ form_errors(form.correo) }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Teléfono *</label>
+                                    {{ form_widget(form.telefono, { 'attr': {'class': 'form-control', 'placeholder': 'Ingrese su número de teléfono'} }) }}
+                                    {{ form_errors(form.telefono) }}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label>Empresa *</label>
+                                    {{ form_widget(form.empresa, { 'attr': {'class': 'form-control', 'placeholder': 'Nombre de su empresa'} }) }}
+                                    {{ form_errors(form.empresa) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-4">
+                            {{ form_widget(form.guardar, { 'attr': {'class': 'btnCustom'} }) }}
+                        </div>
+                        <input type="hidden" name="recaptcha_token">
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascriptsPersonales %}
+    {{ include('_recaptcha.html.twig', {'formulario': 'form_evento', 'accion': 'evento'}) }}
+{% endblock %}
