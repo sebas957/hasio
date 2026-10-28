@@ -1918,6 +1918,23 @@ button:focus-visible {
     margin-top: 24px;
 }
 
+.soporte-mesa {
+    margin: 24px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--sem-borde);
+    font-size: 15px;
+}
+
+.soporte-mesa a {
+    font-weight: 600;
+    color: var(--azul-claro);
+}
+
+.soporte-mesa a i {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
 .soporte-canales {
     margin-top: 10px;
 }
