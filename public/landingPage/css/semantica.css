@@ -2160,6 +2160,21 @@ button:focus-visible {
     margin-bottom: 4px;
 }
 
+/* Variante de advertencia (paquete de Windows 7): mismos tonos ámbar que .soporte-estado-pendiente */
+.soporte-consejos-alerta {
+    background: #fff4dc;
+    border-left-color: #8a5a00;
+}
+
+.soporte-consejos-alerta h3,
+.soporte-consejos-alerta h3 i {
+    color: #8a5a00;
+}
+
+.soporte-consejos-alerta li {
+    margin-bottom: 8px;
+}
+
 .soporte-botones {
     display: flex;
     align-items: center;
