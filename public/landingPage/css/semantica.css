@@ -2175,6 +2175,36 @@ button:focus-visible {
     margin-bottom: 8px;
 }
 
+.soporte-consejos-alerta .soporte-descarga-accion {
+    margin: 14px 0 0;
+}
+
+/* Enlace a la sección de Windows 7 debajo del botón principal de descarga */
+.soporte-windows7-enlace {
+    display: inline-block;
+    margin: -12px 0 22px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8a5a00;
+    background: #fff4dc;
+    border-radius: 999px;
+}
+
+.soporte-windows7-enlace i {
+    margin-right: 6px;
+}
+
+.soporte-windows7-enlace a {
+    color: #8a5a00;
+    text-decoration: underline;
+}
+
+/* Al saltar a la sección de Windows 7 queda un margen bajo el menú fijo */
+#windows-7 {
+    scroll-margin-top: 110px;
+}
+
 .soporte-botones {
     display: flex;
     align-items: center;
